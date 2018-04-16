@@ -1,0 +1,24 @@
+body {
+  background-color: #f7f7f7;
+  
+}
+
+
+.ui.menu.fixed {
+  margin-bottom: 1rem;
+}
+
+.ui.menu .item {
+  font-weight: bold;
+}
+
+.ui.menu .item>img:not(.ui) {
+  display: inline-block;
+  width: 40px;
+  margin-right: 5px;
+  
+}
+
+.ui.form .error.message, .ui.form .success.message, .ui.form .warning.message {
+  display: block;
+}

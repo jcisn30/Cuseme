@@ -1,40 +1,50 @@
 const mongoose = require('mongoose');
 
 const beerSchema = new mongoose.Schema({
-    Title: {
+    title: {
         type:  String,
     },
     
-    Image: {
+    id: {
+        type: String,
+    },
+    
+    image: {
         type: String,
         default: false
     },
     
     URL: {
         type: String,
-        default: false
+        
     },
     
-    Caption: {
+    caption: {
         type: String,
         default: false
     },
     
-    Description: {
+    description: {
         type: String,
         default: false
     },
     
-    Created_date: {
+    created_date: {
         type: Date,
         default: Date.now
     },
     
-    Active: {
+    active: {
         type: Boolean,
         
-    }
+    },
     
+     message: [
+        {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Message"
+    }
+    ]
     
 });
 

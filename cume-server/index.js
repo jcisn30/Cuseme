@@ -7,7 +7,7 @@ const errorHandler = require("./handlers/error");
 const authRoutes = require("./routes/auth");
 const messagesRoutes = require("./routes/messages");
 const { logRequired, ensureCorrectUser } = require("./middleware/auth"); 
-var beerRoutes = require("./routes/beer");
+const beerRoutes = require("./routes/beer");
 var kidRoutes = require("./routes/kid");
 const db = require("./models");
 const PORT = 8081;
@@ -15,17 +15,14 @@ const PORT = 8081;
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
-app.use(express.static(__dirname +'/public'));
-app.use(express.static(__dirname + '/views'));
+// app.use(express.static(__dirname +'/public'));
+// app.use(express.static(__dirname + '/views'));
 
-app.get('/', function(req, res){
-    res.send("hello");
-});
 
 app.use("/api/auth", authRoutes);
 app.use("/api/users/:id/messages", logRequired, ensureCorrectUser, messagesRoutes);
-app.use('/api/Beer', beerRoutes);
-app.use('/api/Kid', kidRoutes);
+app.use('/api/beer', beerRoutes);
+app.use('/api/kid', kidRoutes);
 
 app.get("/api/messages", logRequired, async function(req, res, next){
   try {

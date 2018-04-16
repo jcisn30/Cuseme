@@ -1,16 +1,18 @@
-var express = require('express');
-var router = express.Router();
-var db = require("../models");
-var helpers = require("../handlers/beer");
+const express = require("express");
+const router = express.Router({ mergeParams: true});
 
 
+const { createBeer, getBeer, deleteBeer, updateBeer, getBeerById} = require("../handlers/beers");
+
+//prefix - /api/beers
 router.route('/')
- .get(helpers.getBeer)
- .post(helpers.createBeer)
- 
-router.route('/:beerId')
-  .get(helpers.getBeerById)
-  .put(helpers.updateBeer)
-  .delete(helpers.deleteBeer)
-  
+ .get(getBeer)
+ .post(createBeer)
+
+//prefix - /api/beers/beerid
+router
+.route("/:beerId")
+.get(getBeerById)
+.delete(deleteBeer);
+
 module.exports = router;
