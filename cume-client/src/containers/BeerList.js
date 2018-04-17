@@ -11,7 +11,7 @@ import BeerItem from "../components/BeerItem";
 class BeerList extends Component {
 	componentDidMount(){
 		this.props.fetchBeers();
-		
+	
 	}
 	
 

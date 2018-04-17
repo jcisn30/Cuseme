@@ -7,6 +7,8 @@ import Main from "./Main";
 import {setAuthorizationToken, setCurrentUser} from "../store/actions/auth";
 import jwtDecode from "jwt-decode";
 
+
+
 const store = configureStore();
 
 if (localStorage.jwtToken) {
@@ -21,12 +23,14 @@ if (localStorage.jwtToken) {
 
 const App = () => (
   <Provider store={store}>
+  
     <Router>
       <div className="ui fluid container">
         <Navbar />
         <Main />
      </div>
     </Router>
+    
   </Provider>
   );
 

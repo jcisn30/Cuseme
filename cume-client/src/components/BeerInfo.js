@@ -1,8 +1,11 @@
-import React from 'react';
+import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import './BeerInfo.css';
 
+
 const BeerInfo = ({info}) =>
+
+	
 <div className="ui two column centered grid">
   <div className="ui card">
   <div className="content">
