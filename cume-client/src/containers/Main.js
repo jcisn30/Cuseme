@@ -7,12 +7,13 @@ import UserAside from "../components/UserAside";
 import BeerInfo from "../components/BeerInfo";
 import { authUser } from "../store/actions/auth";
 import { removeError } from "../store/actions/errors";
+import {getCurrentBeer, getBeerInfo} from "../store/actions/beer";
 
 
 
 const Main = props => {
     {props.children}
-    const { authUser, errors, removeError, currentUser } = props;
+    const { authUser, errors, removeError, currentUser, getCurrentBeer, getBeerInfo } = props;
 
     return (
         <div className="main">
@@ -36,8 +37,8 @@ const Main = props => {
                 );
             }}
             />
-             
-             <Route exact path="/:id" component={BeerInfo} />
+            <Route exact path="/:id" component = {BeerInfo}  />
+            />
             
           </Switch>
         </div>

@@ -2,9 +2,12 @@ import React from 'react';
 import {connect} from "react-redux";
 import {Link } from 'react-router-dom';
 import {getCurrentBeer, getBeerInfo} from "../store/actions/beer";
+// import {getComments} from "../store/actions/comments";
 import './BeerItem.css';
 
-const BeerItem = ({title, URL, image, active, id, setBeer}) => (
+
+
+const BeerItem = ({title, URL, image, active, id, setBeer,}) => (
 	<div className="column">
 	
 	 <Link to={{pathname: `/${id}`}} onClick={setBeer(id)}>
@@ -19,13 +22,16 @@ const BeerItem = ({title, URL, image, active, id, setBeer}) => (
 
 
 
-const mapDispatchToProps = dispatch => ({
+const mapDispatchToProps = (dispatch) => ({
   setBeer(id) {
     return () => {
       dispatch(getCurrentBeer(id));
       dispatch(getBeerInfo(id));
+       
     };
   },
 });
+
+
 
 export default connect(null,mapDispatchToProps)(BeerItem);

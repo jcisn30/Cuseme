@@ -4,12 +4,16 @@ const User = require("./user");
 const messageSchema = new mongoose.Schema({
     text: {
         type: String,
-        required: true,
+        required: false,
         maxLength: 160
     },
     user: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "User"
+    },
+     beer: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Beer"
     }
 }, {
     timestamps: true

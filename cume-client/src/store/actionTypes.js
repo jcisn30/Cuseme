@@ -4,3 +4,6 @@ export const SET_CURRENT_USER = "SET_CURRENT_USER";
 export const LOAD_BEERS = "LOAD_BEERS";
 export const LOAD_BEER = "LOAD_BEER";
 export const SET_BEER_INFO = "SET_BEER_INFO";
+export const LOAD_MESSAGES = "LOAD_MESSAGES";
+export const REMOVE_MESSAGE = "REMOVE_MESSAGE";
+export const SET_COMMENTS = "SET_COMMENTS";

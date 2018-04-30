@@ -4,6 +4,7 @@ import errors from "./errors";
 import beers from "./beers";
 import id from "./beer";
 import info from "./beer";
+import comments from "./comments";
 
 
 const rootReducer = combineReducers({
@@ -11,7 +12,8 @@ const rootReducer = combineReducers({
 	errors, 
 	beers,
 	id,
-	info
+	info,
+	comments,
 });
 
 export default rootReducer;

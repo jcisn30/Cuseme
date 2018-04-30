@@ -20,11 +20,11 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 
 app.use("/api/auth", authRoutes);
-app.use("/api/users/:id/messages", logRequired, ensureCorrectUser, messagesRoutes);
+app.use("/api/beer/:id1/users/:id/messages", logRequired, ensureCorrectUser,  messagesRoutes);
 app.use('/api/beer', beerRoutes);
 app.use('/api/kid', kidRoutes);
 
-app.get("/api/messages", logRequired, async function(req, res, next){
+app.get("/api/beer/:id1/users/:id/messages", logRequired, async function(req, res, next){
   try {
     let messages = await db.Message.find().sort({ createdAt: "desc"}).populate("user", {
       username: true,

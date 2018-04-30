@@ -23,7 +23,8 @@ exports.signin = async function(req, res, next) {
         		username,
         		profileImageUrl,
         		token
-        	});
+        	}),
+        	console.log(token);
 	    }else {
     		return next({
     			status: 400,

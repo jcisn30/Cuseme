@@ -3,30 +3,36 @@ const mongoose = require('mongoose');
 const beerSchema = new mongoose.Schema({
     title: {
         type:  String,
+        
     },
     
     id: {
         type: String,
+        default: false
     },
     
     image: {
         type: String,
         default: false
+        
     },
     
     URL: {
         type: String,
+        default: false
         
     },
     
     caption: {
         type: String,
         default: false
+        
     },
     
     description: {
         type: String,
         default: false
+        
     },
     
     created_date: {
@@ -36,16 +42,29 @@ const beerSchema = new mongoose.Schema({
     
     active: {
         type: Boolean,
+        default: false
         
     },
     
-     message: [
+    message: [
         {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Message"
-    }
-    ]
+            
+        }
+        
+        
+        ]
+       
+        
     
+    
+        
+         
+        
+         
+        
+         
+         
+
 });
 
 const Beer = mongoose.model('Beer', beerSchema);

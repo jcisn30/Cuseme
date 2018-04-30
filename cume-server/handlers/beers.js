@@ -27,14 +27,14 @@ exports.createBeer = async function(req, res, next){
 
 exports.getBeerById = async function(req, res, next){
     try{
-   db.Beer.findById(req.params.beerId)
-   .then(function(foundBeerId){
-       res.json(foundBeerId);
+  db.Beer.findById(req.params.beerId)
+  .then(function(foundBeerId){
+      res.json(foundBeerId);
       
-   })
-   }catch(err){
-       return next(err);
-   }
+  })
+  }catch(err){
+      return next(err);
+  }
 }
 
 exports.updateBeer = async function(req, res, next){

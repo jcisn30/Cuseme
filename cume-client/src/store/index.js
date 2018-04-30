@@ -22,12 +22,14 @@ export function configureStore() {
         rootReducer,
         load(),
         compose (
-            applyMiddleware(thunk,save() ), 
+            applyMiddleware(thunk, save() ), 
             window.devToolsExtension ? window.devToolsExtension() : f => f,
             
             ),
              );
     
     //   let persistor = persistStore(store)
+        
         return store;
+        
 }

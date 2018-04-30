@@ -11,7 +11,7 @@ export const loadBeers = beers => ({
 
 export const fetchBeers = () => {
 	return dispatch => {
-		return apiCall("get", "api/beer")
+		return apiCall ("get", "api/beer")
 		.then(res => {
 			dispatch(loadBeers(res));
 			})
