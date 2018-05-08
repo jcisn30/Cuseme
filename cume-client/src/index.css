@@ -19,6 +19,14 @@ body {
   
 }
 
+.ui.block.header {
+  border: none;
+}
+
+.ui.red.ribbon.label {
+  margin-left: 3%;
+}
+
 .ui.form .error.message, .ui.form .success.message, .ui.form .warning.message {
   display: block;
 }

@@ -1,10 +1,25 @@
-import React from 'react';
+import React, { Component } from "react";
 import Moment from "react-moment";
 import { Link } from "react-router-dom";
 import { connect } from 'react-redux';
+import Likes from "./Likes";
 import DefaultProfileImg from "../images/laughing-horse-clipart-1.jpg";
+import './Comments.css';
 
-const Comments = ({ comments }) =>
+
+  
+ 
+  
+
+   const Comments =  ({ messages}) =>
+   
+   <div className="content">
+    <span className="right floated">
+     <Likes />
+    </span>
+    <i className="comment icon"></i>
+    {messages.length} Comments
+  
   <div className="ui feed">
 <div className="event">
     <div className="label">
@@ -13,37 +28,38 @@ const Comments = ({ comments }) =>
     <div className="content">
       <div className="summary">
          <Link to="/">@&nbsp;</Link>
-        <div className="date">
-           <Moment className="text-muted" format="Do MMM YYYY">
-		{this.date}
+       <div className="date">
+        <Moment className="text-muted" format="Do MMM YYYY">
+		{messages.date}
 	   </Moment>
 	    </div>
       </div>
     <div className="extra text">
-      {comments.map(comment => {
+      {messages.map(message => {
         // const dateArray = comment.user.split('-');
 
-        return <li>{comment.text}</li>;
+        return <p> {message.text} </p>
+         
+          
       })}
    
    
       </div>
-<div className="extra images">
-        <a><img src="/images/wireframe/image.png"/></a>
-        <a><img src="/images/wireframe/image.png"/></a>
-      </div>
- <div className="meta">
-        <a className="like">
-          <i className="like icon"></i> 41 Likes
-        </a>
-      </div>
+
+ 
+      
+    
+
     </div>
   </div>
+  
+</div>
+
 </div>
 
 
-const mapStateToProps = ( {comments} ) => ({
-  comments,
+const mapStateToProps = ( {messages} ) => ({
+  messages
 });
 
-export default connect(mapStateToProps)(Comments);
+export default connect(mapStateToProps) (Comments);

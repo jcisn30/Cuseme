@@ -8,7 +8,7 @@ const beerSchema = new mongoose.Schema({
     
     id: {
         type: String,
-        default: false
+       
     },
     
     image: {
@@ -38,6 +38,10 @@ const beerSchema = new mongoose.Schema({
     created_date: {
         type: Date,
         default: Date.now
+    },
+    
+    likes: {
+        type: Number
     },
     
     active: {

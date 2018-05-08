@@ -7,7 +7,7 @@ import './BeerItem.css';
 
 
 
-const BeerItem = ({title, URL, image, active, id, setBeer,}) => (
+const BeerItem = ({title, URL, image, active, id, setBeer, created_date, messages}) => (
 	<div className="column">
 	
 	 <Link to={{pathname: `/${id}`}} onClick={setBeer(id)}>
@@ -27,6 +27,7 @@ const mapDispatchToProps = (dispatch) => ({
     return () => {
       dispatch(getCurrentBeer(id));
       dispatch(getBeerInfo(id));
+      
        
     };
   },

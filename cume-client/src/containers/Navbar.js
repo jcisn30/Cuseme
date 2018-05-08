@@ -13,13 +13,13 @@ class Navbar extends Component {
     render(){
         return (
             
-            <div className="ui top stackable menu">
+            <div className="ui pointing menu">
                 <Link to='/' className="item">
                 <img src={Logo} alt="logo"/>
                 </Link>
-                    <a className="item">Features</a>
-                    <a className="item">Testimonials</a>
-                    <a className="item">Features</a>
+                    <a className="active item">Hold My Beer</a>
+                    <a className="item">Kids</a>
+                    <a className="item">Funny Reads</a>
                 {this.props.currentUser.isAuthenticated ? (
                      <div className="right menu">
                      <Link to="/UserAside" className="item">{this.props.currentUser.user.username}</Link>

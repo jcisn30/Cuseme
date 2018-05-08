@@ -4,8 +4,9 @@ import errors from "./errors";
 import beers from "./beers";
 import id from "./beer";
 import info from "./beer";
-import comments from "./comments";
+import messages from "./comments";
 
+import { reducer as formReducer } from 'redux-form';
 
 const rootReducer = combineReducers({
 	currentUser,
@@ -13,7 +14,9 @@ const rootReducer = combineReducers({
 	beers,
 	id,
 	info,
-	comments,
+	form: formReducer,
+	messages,
+	
 });
 
 export default rootReducer;

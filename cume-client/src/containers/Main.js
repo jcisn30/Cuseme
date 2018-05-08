@@ -37,8 +37,8 @@ const Main = props => {
                 );
             }}
             />
-            <Route exact path="/:id" component = {BeerInfo}  />
-            />
+            
+             <Route exact path="/:id" render={props => <BeerInfo {...props}   />}  />
             
           </Switch>
         </div>

@@ -1,0 +1,14 @@
+.content {
+    padding-top: 10%;
+    padding-bottom: 20%;
+}
+
+i.icon {
+    display:  inline;
+    
+}
+
+.ui.card [class*="right floated"], .ui.cards>.card [class*="right floated"] {
+    margin-left: 35%; 
+    padding-right: 5%;
+}

@@ -10,7 +10,8 @@ export default (state = initialState, action) => {
       
     case SET_BEER_INFO:
       return action.info;
-        
+    
+    
     
     default:
       return state;

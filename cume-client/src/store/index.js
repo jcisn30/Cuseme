@@ -2,6 +2,7 @@ import rootReducer from "./reducers";
 import { createStore, applyMiddleware, compose } from "redux";
 import thunk from "redux-thunk";
 import { save, load } from "redux-localstorage-simple";
+import { reducer as formReducer } from 'redux-form';
 // import { persistStore, persistReducer } from 'redux-persist';
 // import storage from 'redux-persist/lib/storage';
 
@@ -22,7 +23,7 @@ export function configureStore() {
         rootReducer,
         load(),
         compose (
-            applyMiddleware(thunk, save() ), 
+            applyMiddleware(thunk, save()  ), 
             window.devToolsExtension ? window.devToolsExtension() : f => f,
             
             ),
