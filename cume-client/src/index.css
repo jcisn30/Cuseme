@@ -3,9 +3,13 @@ body {
   
 }
 
+.ui.menu:not(.vertical) .item {
+  font-family: 'Special Elite', cursive;
+}
 
 .ui.menu.fixed {
   margin-bottom: 1rem;
+   
 }
 
 .ui.menu .item {
@@ -16,11 +20,14 @@ body {
   display: inline-block;
   width: 40px;
   margin-right: 5px;
+ 
   
 }
 
 .ui.block.header {
   border: none;
+ font-family: 'Special Elite', cursive;
+ font-size: 24px;
 }
 
 .ui.red.ribbon.label {
@@ -30,3 +37,4 @@ body {
 .ui.form .error.message, .ui.form .success.message, .ui.form .warning.message {
   display: block;
 }
+

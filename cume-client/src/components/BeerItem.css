@@ -6,3 +6,9 @@
   height: 100%;
   width: 100%;
 }
+
+.content {
+  text-align: center !important;
+  padding-bottom: 2% !important;
+  padding-top: 2% !important;
+}

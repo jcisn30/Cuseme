@@ -1,13 +1,15 @@
 import React from 'react';
 import {connect} from "react-redux";
 import {Link } from 'react-router-dom';
+import Likes from "./Likes";
 import {getCurrentBeer, getBeerInfo} from "../store/actions/beer";
 // import {getComments} from "../store/actions/comments";
 import './BeerItem.css';
 
 
 
-const BeerItem = ({title, URL, image, active, id, setBeer, created_date, messages}) => (
+const BeerItem = ({title, URL, image, active, id, setBeer, created_date, messages, likes}) => (
+	
 	<div className="column">
 	
 	 <Link to={{pathname: `/${id}`}} onClick={setBeer(id)}>
@@ -15,9 +17,34 @@ const BeerItem = ({title, URL, image, active, id, setBeer, created_date, message
 		
 			<h5>{title}</h5>
 			<img className="columnImg" src={URL} />
+				
+				
+	
+	
+	
+	
+	
+		
+		
 		</div>
+		
       </Link>
-	</div>
+      	
+	
+	
+		
+     
+	
+	<div className="ui segment">
+	<div className="content">
+		 <Link to={{pathname: `/${id}`}} onClick={setBeer(id)}>
+  	<i className="comment outline icon"> Comment</i></Link>
+			<span className="right floated">
+     <Likes />
+     </span>
+     </div>
+</div>
+</div>
 )
 
 

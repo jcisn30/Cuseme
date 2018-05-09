@@ -34,8 +34,8 @@ class MessageForm extends Component {
       <div>
       <Comments />
       <form className="ui form" onSubmit={this.handleNewMessage}>
-     <div class="field">
-     <label>Add Comment</label>
+     <div className="field">
+     
   
         <input
           type="text"
@@ -45,8 +45,8 @@ class MessageForm extends Component {
         />
         
         </div>
-        <button type="submit"  class="ui button">
-          Add my message!
+        <button type="submit"  className="ui button">
+          Add Commnet
         </button>
       </form>
     

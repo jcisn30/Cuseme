@@ -13,7 +13,7 @@ import './Comments.css';
 
    const Comments =  ({ messages}) =>
    
-   <div className="content">
+   <div className="content" id="infoMess">
     <span className="right floated">
      <Likes />
     </span>

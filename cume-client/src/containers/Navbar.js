@@ -14,10 +14,10 @@ class Navbar extends Component {
         return (
             
             <div className="ui pointing menu">
-                <Link to='/' className="item">
+                <Link to='/' className="item active">
                 <img src={Logo} alt="logo"/>
                 </Link>
-                    <a className="active item">Hold My Beer</a>
+                    <a className="item">Hold My Beer</a>
                     <a className="item">Kids</a>
                     <a className="item">Funny Reads</a>
                 {this.props.currentUser.isAuthenticated ? (

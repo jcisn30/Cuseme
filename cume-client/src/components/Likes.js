@@ -1,4 +1,5 @@
 import React from 'react';
+import './Likes.css';
 
 class Likes extends React.Component {
 
@@ -37,9 +38,9 @@ class Likes extends React.Component {
   render(){
 
     return(
-      <div>
-       <i className="heart outline like icon" onClick={this.updateLikes}>Likes</i>
-        <p>{this.state.likes}</p>
+      <div className="likes">
+       <i class="thumbs up outline icon" onClick={this.updateLikes}> Likes {this.state.likes}</i>
+        
       </div>
     );
   }

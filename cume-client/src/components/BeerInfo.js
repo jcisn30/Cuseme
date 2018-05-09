@@ -19,7 +19,7 @@ const BeerInfo = ({info}) =>
 <div>	
 <div className="ui two column centered grid">
   <div className="ui card">
-  <div className="content">
+  <div className="content" id="infoTitle">
     <div className="left floated meta">{info.title}</div>
   </div>
   <div className="image">
