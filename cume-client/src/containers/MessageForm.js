@@ -1,10 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { postNewMessage, getComments } from "../store/actions/beer";
-import Moment from "react-moment";
-import { Link } from "react-router-dom";
+import { postNewMessage } from "../store/actions/beer";
 import Comments from "../components/Comments";
-import DefaultProfileImg from "../images/laughing-horse-clipart-1.jpg";
 import PropTypes from "prop-types";
 
 

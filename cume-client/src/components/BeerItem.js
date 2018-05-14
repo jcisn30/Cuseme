@@ -16,7 +16,7 @@ const BeerItem = ({title, URL, image, active, id, setBeer, created_date, message
 		<div className="ui raised segment"  >
 		
 			<h5>{title}</h5>
-			<img className="columnImg" src={URL} />
+			<img className="columnImg" src={URL} alt="mainItemPic" />
 				
 				
 	

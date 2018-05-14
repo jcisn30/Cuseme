@@ -1,12 +1,7 @@
-import React, {Component} from 'react';
+import React from 'react';
 import { connect} from 'react-redux';
-import {Link } from 'react-router-dom';
-import Moment from "react-moment";
 import MessageForm from "../containers/MessageForm";
-
-import {getCurrentBeer, getBeerInfo} from "../store/actions/beer";
 import './BeerInfo.css';
-import DefaultProfileImg from "../images/laughing-horse-clipart-1.jpg";
 // import {removeMessage } from "../store/actions/messages";
 
 
@@ -23,7 +18,7 @@ const BeerInfo = ({info, errors}) =>
     <div className="left floated meta">{info.title}</div>
   </div>
   <div className="image">
-    <img src={info.URL}/>
+    <img src={info.URL} alt="beerPic"/>
   </div>
  
   <MessageForm errors={errors} />

@@ -8,7 +8,7 @@ class UserAside extends Component {
   <div className="ui center aligned container">
    <div className="card">
     <div className="image">
-      <img src={this.props.currentUser.user.profileImageUrl || DefaultProfileImg}/>
+      <img src={this.props.currentUser.user.profileImageUrl || DefaultProfileImg} alt="userPic"/>
     </div>
     <div className="content">
       <div className="header">{this.props.currentUser.user.username}</div>
