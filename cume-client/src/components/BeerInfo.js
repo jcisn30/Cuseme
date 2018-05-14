@@ -13,8 +13,8 @@ import DefaultProfileImg from "../images/laughing-horse-clipart-1.jpg";
 
 
 
-const BeerInfo = ({info}) => 
-
+const BeerInfo = ({info, errors}) => 
+	
 
 <div>	
 <div className="ui two column centered grid">
@@ -26,7 +26,8 @@ const BeerInfo = ({info}) =>
     <img src={info.URL}/>
   </div>
  
-  <MessageForm />
+  <MessageForm errors={errors} />
+  
   
     
 </div>

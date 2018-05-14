@@ -15,7 +15,7 @@ exports.createMessage = async function(req, res, next) {
 		foundBeer.message.push(message);
 		await foundBeer.save();
 		
-		let foundMessage = await db.Message.findById(message.id).populate("user", {
+		let foundMessage = await db.Message.findById(message._id).populate("user", {
 			username: true,
 			profileImageUrl: true,
 			
@@ -25,7 +25,7 @@ exports.createMessage = async function(req, res, next) {
 
 		return res.status(200).json(foundMessage);
 	} catch(err) {
-		return next(err);
+		return next(err );
 	}
 };
 

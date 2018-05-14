@@ -5,6 +5,7 @@ import Moment from "react-moment";
 import { Link } from "react-router-dom";
 import Comments from "../components/Comments";
 import DefaultProfileImg from "../images/laughing-horse-clipart-1.jpg";
+import PropTypes from "prop-types";
 
 
 
@@ -29,22 +30,33 @@ class MessageForm extends Component {
   
 
   render() {
-    
+   const { errors} = this.props;
+		
+   
+			
     return (
       <div>
       <Comments />
       <form className="ui form" onSubmit={this.handleNewMessage}>
+     	{errors.message && (
+				<div className="ui error message">
+					<div className="header">
+					{errors.message}
+					</div>
+				</div>
+					)}
      <div className="field">
-     
   
         <input
           type="text"
           className="form-control"
           value={this.state.message}
-          onChange={e => this.setState({ message: e.target.value })}
+          onChange={e => this.setState({ message: e.target.value })
+          }
         />
-        
+        	
         </div>
+        
         <button type="submit"  className="ui button">
           Add Commnet
         </button>
@@ -65,6 +77,9 @@ function mapStateToProps(state) {
   };
 }
 
-
+MessageForm.propTypes = {
+ loginError: PropTypes.func,
+  removeError: PropTypes.func
+}
 
 export default connect(mapStateToProps, { postNewMessage })(MessageForm);

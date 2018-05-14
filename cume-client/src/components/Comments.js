@@ -25,9 +25,9 @@ import './Comments.css';
     <div className="label">
       <img src={DefaultProfileImg} alt="" />
     </div>
-    <div className="content">
+    <div className="content" id="comment">
       <div className="summary">
-         <Link to="/">@&nbsp;</Link>
+         <Link to="/"></Link>
        <div className="date">
         <Moment className="text-muted" format="Do MMM YYYY">
 		{messages.date}

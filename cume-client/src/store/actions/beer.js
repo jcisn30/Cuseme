@@ -1,5 +1,5 @@
 import {apiCall} from "../../services/api";
-import {addError} from "./errors";
+import {addError, removeError} from "./errors";
 import {LOAD_BEER, SET_BEER_INFO, SET_COMMENTS} from "../actionTypes";
 
 
@@ -34,7 +34,7 @@ export function getBeerInfo(id) {
 			.then(info => {
         dispatch(setBeerInfo(info));
          dispatch(setComments(info.message));
-        
+        dispatch(removeError());
 			})
 			.catch(err => {
 			dispatch(addError(err.message));
@@ -67,13 +67,17 @@ export const postNewMessage = text => (dispatch, getState) => {
     .then(res=> {
        dispatch(getCurrentBeer(id1));
       dispatch(getBeerInfo(id1));
-      
+       
       
         
     })
    
 		
-        .catch(err => addError(err.message));
+       .catch(err => {
+			dispatch(addError(err.message));
+         
+          
+        });
 };
 
 

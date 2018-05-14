@@ -38,8 +38,12 @@ const Main = props => {
             }}
             />
             
-             <Route exact path="/:id" render={props => <BeerInfo {...props}   />}  />
-            
+             <Route exact path="/:id" render={props => {
+                return (
+                    <BeerInfo removeError={removeError} errors={errors} {...props} />
+                );
+            }}
+            />
           </Switch>
         </div>
         );

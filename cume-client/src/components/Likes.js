@@ -39,7 +39,7 @@ class Likes extends React.Component {
 
     return(
       <div className="likes">
-       <i class="thumbs up outline icon" onClick={this.updateLikes}> Likes {this.state.likes}</i>
+       <i className="thumbs up outline icon" onClick={this.updateLikes}> Likes {this.state.likes}</i>
         
       </div>
     );
