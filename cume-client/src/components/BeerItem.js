@@ -8,7 +8,7 @@ import './BeerItem.css';
 
 
 
-const BeerItem = ({title, URL, image, active, id, setBeer, created_date, messages, likes}) => (
+const BeerItem = ({title, URL, image, active, id, setBeer, created_date, message, likes}) => (
 	
 	<div className="column">
 	

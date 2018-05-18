@@ -14,10 +14,12 @@ export const fetchBeers = () => {
 		return apiCall ("get", "api/beer")
 		.then(res => {
 			dispatch(loadBeers(res));
+			
 			})
-			.catch(err => {
-			dispatch(addError(err.message));
-		});
+			 .catch(err => {
+        dispatch(addError(err.message));
+      });
+		
 	};
 };
 

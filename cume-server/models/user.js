@@ -8,16 +8,21 @@ const userSchema = new mongoose.Schema({
         required: true,
         unique: true
     },
+    
     username: {
         type: String,
         required: true,
-        unique: true
+        unique: true,
+        ref: "User"
         
     },
+    
+    
     password: {
         type: String,
         required: true
     },
+    
     profileImageUrl: {
         type: String
     },

@@ -21,6 +21,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 app.use("/api/auth", authRoutes);
 app.use("/api/beer/:id1/users/:id/messages", logRequired, ensureCorrectUser,  messagesRoutes);
+
 app.use('/api/beer', beerRoutes);
 app.use('/api/kid', kidRoutes);
 
@@ -35,6 +36,9 @@ app.get("/api/beer/:id1/users/:id/message", logRequired, async function(req, res
     return next(err);
   }
 });
+
+
+
 
 app.use(function(req, res, next) {
   let err = new Error("Not Found");

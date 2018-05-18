@@ -44,17 +44,20 @@ const beerSchema = new mongoose.Schema({
         type: Number
     },
     
+    
+    
     active: {
         type: Boolean,
         default: false
         
     },
     
+      
+   
     message: [
         {
             
         }
-        
         
         ]
        

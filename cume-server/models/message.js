@@ -12,13 +12,20 @@ const messageSchema = new mongoose.Schema({
         username: String,
         ref: "User"
     },
+    
+   username: {
+       type: String
+   },
+   
      beer: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "Beer"
     }
 }, {
     timestamps: true
-}
+},
+
+ 
 
 );
 

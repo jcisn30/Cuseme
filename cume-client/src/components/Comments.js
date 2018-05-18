@@ -27,19 +27,22 @@ import './Comments.css';
     </div>
     <div className="content" id="comment">
       <div className="summary">
-         <Link to="/"></Link>
-       <div className="date">
-        <Moment className="text-muted" format="Do MMM YYYY">
-		{messages.date}
-	   </Moment>
-	    </div>
+         <Link to="/"><p></p></Link>
+         
+       
       </div>
     <div className="extra text">
       {messages.map(message => {
         // const dateArray = comment.user.split('-');
 
-        return <p> {message.text} </p>
-         
+        return <div>{message.username}
+        <p>{message.text}</p>
+        <p><Moment toNow className="text-muted" format="Do MMM YYYY">
+		{message.createdAt}
+	   </Moment></p></div>
+	   
+	   
+           
           
       })}
    

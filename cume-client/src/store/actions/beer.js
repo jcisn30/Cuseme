@@ -59,7 +59,7 @@ export function getComments(message) {
     
 }
 
-export const postNewMessage = text => (dispatch, getState) => {
+export const postNewMessage = (text) => (dispatch, getState) => {
   let { currentUser, info} = getState();
   const id = currentUser.user.id;
   const id1 = info._id;

@@ -7,6 +7,9 @@ const { createBeer, getBeer, deleteBeer, updateBeer, getBeerById} = require("../
 //prefix - /api/beers
 router.route('/')
  .get(getBeer)
+   
+  
+
  .post(createBeer)
 
 //prefix - /api/beers/beerid
