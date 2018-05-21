@@ -22,7 +22,8 @@ exports.createMessage = async function(req, res, next)
         	let userName1 = userName.toString();
         	let username = userName1.substring(44, userName1.length - 3);
 	 
-      
+    		let userProfileImg = await db.User.findOne({_id: req.params.id}).select(['profileImageUrl']).exec();
+    		
    
      
      
@@ -32,7 +33,8 @@ exports.createMessage = async function(req, res, next)
 			text: req.body.text,
 			user: req.params.id, 
 			beer: req.params.id1,
-		    username:  username
+		    username:  username,
+		    userProfileImg: userProfileImg
 			
 		});
 		

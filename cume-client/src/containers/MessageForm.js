@@ -55,7 +55,7 @@ class MessageForm extends Component {
         </div>
         
         <button type="submit"  className="ui button">
-          Add Commnet
+          Add Comment
         </button>
       </form>
     

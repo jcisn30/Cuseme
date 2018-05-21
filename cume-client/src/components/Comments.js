@@ -22,9 +22,7 @@ import './Comments.css';
   
   <div className="ui feed">
 <div className="event">
-    <div className="label">
-      <img src={DefaultProfileImg} alt="" />
-    </div>
+   
     <div className="content" id="comment">
       <div className="summary">
          <Link to="/"><p></p></Link>
@@ -35,11 +33,8 @@ import './Comments.css';
       {messages.map(message => {
         // const dateArray = comment.user.split('-');
 
-        return <div>{message.username}
-        <p>{message.text}</p>
-        <p><Moment toNow className="text-muted" format="Do MMM YYYY">
-		{message.createdAt}
-	   </Moment></p></div>
+        return <div className="comments"><p className="commentPara"><img className="profileImg" src={message.userProfileImg || DefaultProfileImg} alt="profileImage" /><span className="userName">{message.username}</span> <span> </span> {message.text}</p>
+        <Moment fromNow className="commentTime">{message.createdAt}</Moment></div>
 	   
 	   
            
