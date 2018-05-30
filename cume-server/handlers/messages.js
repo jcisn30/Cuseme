@@ -54,7 +54,7 @@ exports.createMessage = async function(req, res, next)
 		
 		
 		
-	let foundMessage = await db.Message.findById(message.id).populate("user", {
+	let foundMessage = await db.Message.findById(message.Id).populate("user", {
 			username: true,
 			profileImageUrl: true,
 			
@@ -81,9 +81,11 @@ exports.getMessageById = async function(req, res, next){
 }
 exports.deleteMessage = async function(req, res, next) {
 	try {
-		let foundMessage = await db.Message.findById(req.params.message.id);
-		await foundMessage.remove();
-		return res.status(200).json(foundMessage);
+		let message = await db.Message.findById(req.params.messageId);
+	let foundBeer = await db.Beer.findById(req.params.id1);
+    foundBeer.message.remove(message);
+    await foundBeer.save();
+    return res.status(200).json(foundBeer);
 	} catch(err) {
 		return next(err);
 	}

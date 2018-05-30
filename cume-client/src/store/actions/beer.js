@@ -1,6 +1,6 @@
 import {apiCall} from "../../services/api";
 import {addError, removeError} from "./errors";
-import {LOAD_BEER, SET_BEER_INFO, SET_COMMENTS} from "../actionTypes";
+import {LOAD_BEER, SET_BEER_INFO, SET_COMMENTS,  REMOVE_MESSAGE} from "../actionTypes";
 
 
 
@@ -26,6 +26,13 @@ export function setComments(message) {
   };
 }
 
+
+
+
+export const remove = id => ({
+  type: REMOVE_MESSAGE,
+  id
+});
 
 export function getBeerInfo(id) { 
 	return dispatch => {
@@ -81,37 +88,27 @@ export const postNewMessage = (text) => (dispatch, getState) => {
 };
 
 
-// export const fetchMessages = (getState) => {
-//   let { currentUser, info } = getState();
-//   const id = currentUser.user.id;
-//   const id1 = info._id;
-//   return dispatch => {
-//     return apiCall("GET", '/api/beer/${id1}/users/${id}/message')
-//       .then(res => {
-//         dispatch(loadMessages(res));
-//       })
-//       .catch(err => {
-//         dispatch(addError(err.message));
-//       });
-//   };
-// };
 
 
 
-// // CLICK LISTENER
-// const userClick = (id) => {
-//   return dispatch => {
-// 		return apiCall("get", `api/beer/${id}`)
-// 		// 	.then(res => res.json())
-// 			.then(info => {
-//         dispatch(setBeerInfo(info));
-//         dispatch(setComments(info.message));
-        
-// 			})
-// 			.catch(err => {
-// 			dispatch(addError(err.message));
-			
-// 		});
-	    
-//   };
-// }
+export const removeMessage = (message_id, message_user, req) => (dispatch, getState) => {
+  let {currentUser, info} = getState();
+  const id = currentUser.user.id;
+  const id1 = info._id;
+  
+ 
+  if(id === message_user){
+    return apiCall("delete", `/api/beer/${id1}/users/${id}/messages/${message_id}`)
+      .then(res => { 
+        dispatch(getCurrentBeer(id1))
+      dispatch(getBeerInfo(id1))
+      })
+  
+      .catch(err => {
+        addError(err.message);
+      });
+  } else { 
+     document.getElementById('errorname').innerHTML="You must login and be the comment owner to delete!!!"; 
+  }
+  
+};

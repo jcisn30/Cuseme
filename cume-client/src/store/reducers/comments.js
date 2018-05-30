@@ -1,4 +1,4 @@
-import { SET_COMMENTS, GET_COMMENTS } from '../actionTypes';
+import { SET_COMMENTS, REMOVE_MESSAGE } from '../actionTypes';
 
 const initialState = [];
 
@@ -6,8 +6,9 @@ export default (state = initialState, action) => {
   switch (action.type) {
     case SET_COMMENTS:
       return action.message;
-    case GET_COMMENTS:
-      return [...state.messages]
+       case REMOVE_MESSAGE:
+      return state.filter(messages => messages._id !== action.id);
+   
       
     default:
       return state;
