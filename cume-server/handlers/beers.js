@@ -39,7 +39,7 @@ exports.getBeerById = async function(req, res, next){
 
 exports.updateBeer = async function(req, res, next){
     try{
-   db.Beer.findOneAndUpdate({_id: req.params.beerId}, req.body, {new: true})
+   db.Beer.findOneAndUpdate({_id: req.params.beerId}, req.body, { "new": true })
    .then(function(beer){
        res.json(beer);
    })

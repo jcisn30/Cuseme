@@ -30,6 +30,7 @@ class BeerList extends Component {
       title={b.title}
       image={b.image}
       URL={b.URL}
+      likes={b.likes}
       caption={b.caption}
       description={b.description}
       create_date={b.create_date}

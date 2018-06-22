@@ -1,14 +1,14 @@
 import React from 'react';
 import {connect} from "react-redux";
 import {Link } from 'react-router-dom';
-import Likes from "./Likes";
+import Likes from "../containers/Likes";
 import {getCurrentBeer, getBeerInfo} from "../store/actions/beer";
 // import {getComments} from "../store/actions/comments";
 import './BeerItem.css';
 
 
 
-const BeerItem = ({title, URL, image, active, id, setBeer, created_date, message, likes}) => (
+const BeerItem = ({title, URL, image, active, id, setBeer, created_date, message,likes}) => (
 	
 	<div className="column">
 	
@@ -40,7 +40,8 @@ const BeerItem = ({title, URL, image, active, id, setBeer, created_date, message
 		 <Link to={{pathname: `/${id}`}} onClick={setBeer(id)}>
   	<i className="comment outline icon"> Comment</i></Link>
 			<span className="right floated">
-     <Likes />
+			<Link to={{pathname: `/${id}`}} onClick={setBeer(id)}>
+     <i className="em em-rolling_on_the_floor_laughing"></i> {likes}</Link>
      </span>
      </div>
 </div>

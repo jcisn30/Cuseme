@@ -16,6 +16,7 @@ router.route('/')
 router
 .route("/:beerId")
 .get(getBeerById)
+.put(updateBeer)
 .delete(deleteBeer);
 
 module.exports = router;

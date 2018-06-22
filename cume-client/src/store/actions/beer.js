@@ -1,6 +1,6 @@
 import {apiCall} from "../../services/api";
 import {addError, removeError} from "./errors";
-import {LOAD_BEER, SET_BEER_INFO, SET_COMMENTS,  REMOVE_MESSAGE} from "../actionTypes";
+import {LOAD_BEER, SET_BEER_INFO, SET_COMMENTS,  REMOVE_MESSAGE,  LOAD_LIKES, SET_LIKES} from "../actionTypes";
 
 
 
@@ -26,7 +26,24 @@ export function setComments(message) {
   };
 }
 
+export function setLikes (likes) {
+  
+  
+  return {
+    
+    type: SET_LIKES,
+    likes
+  };
+}
 
+
+
+export function updatedLikes(likes) {
+  return {
+    type: LOAD_LIKES,
+    likes
+  };
+}
 
 
 export const remove = id => ({
@@ -41,6 +58,7 @@ export function getBeerInfo(id) {
 			.then(info => {
         dispatch(setBeerInfo(info));
          dispatch(setComments(info.message));
+        dispatch(setLikes(info.likes));
         dispatch(removeError());
 			})
 			.catch(err => {
@@ -66,15 +84,32 @@ export function getComments(message) {
     
 }
 
+
+export function getLikes(likes) {
+  return dispatch =>
+  Promise.all(likes =>
+      fetch(likes)
+        .then(res => res.json())
+       )
+    
+    .then(like =>
+    
+      dispatch(setLikes(likes))
+      
+    );
+    
+}
+
 export const postNewMessage = (text) => (dispatch, getState) => {
   let { currentUser, info} = getState();
   const id = currentUser.user.id;
   const id1 = info._id;
   return apiCall("post", `/api/beer/${id1}/users/${id}/messages`, { text })
     .then(res=> {
-       dispatch(getCurrentBeer(id1));
-      dispatch(getBeerInfo(id1));
        
+      
+      // dispatch(getCurrentBeer(id1));
+      dispatch(getBeerInfo(id1));
       
         
     })
@@ -88,7 +123,28 @@ export const postNewMessage = (text) => (dispatch, getState) => {
 };
 
 
+export const like = (likes) => (dispatch, getState) => {
+  let { info} = getState();
+  const id1 = info._id;
+  let likes = info.likes +1;
 
+  
+  return apiCall("put", `/api/beer/${id1}/`, {likes})
+    .then((info)=> {
+      
+      // dispatch(updatedLikes(info.likes))
+      dispatch(getBeerInfo(id1));
+      
+        console.log(likes)
+    }) 
+        
+		
+       .catch(err => {
+			dispatch(addError(err.message));
+         
+          
+        });
+};
 
 
 export const removeMessage = (message_id, message_user, req) => (dispatch, getState) => {
@@ -112,3 +168,8 @@ export const removeMessage = (message_id, message_user, req) => (dispatch, getSt
   }
   
 };
+
+
+
+
+   

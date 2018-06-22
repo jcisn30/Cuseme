@@ -1,6 +1,7 @@
 import {LOAD_BEER, SET_BEER_INFO} from "../actionTypes";
 
-const initialState = 0;
+const initialState =[];
+ 
 
 export default (state = initialState, action) => {
   switch (action.type) {
@@ -10,9 +11,10 @@ export default (state = initialState, action) => {
       
     case SET_BEER_INFO:
       return action.info;
+      
+     
     
-    
-    
+   
     default:
       return state;
   }
@@ -20,5 +22,3 @@ export default (state = initialState, action) => {
 
 
 
-    
-    

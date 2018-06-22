@@ -18,6 +18,10 @@ const messageSchema = new mongoose.Schema({
        type: String
    },
    
+    likes: {
+        type: Number
+    },
+   
      beer: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "Beer"

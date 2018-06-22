@@ -32,7 +32,7 @@ exports.getKidById = function(req, res){
 }
 
 exports.updateKid =  function(req, res){
-   db.Kid.findOneAndUpdate({_id: req.params.kidId}, req.body, {new: true})
+   db.Kid.findOneAndUpdate()
    .then(function(kid){
        res.json(kid);
    })

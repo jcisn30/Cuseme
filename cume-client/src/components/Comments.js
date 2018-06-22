@@ -12,12 +12,10 @@ import './Comments.css';
  
   
 
-   const Comments =  ({ messages, removeMessage, messages_id}) =>
+   const Comments =  ({ messages, removeMessage, messages_id, info}) =>
    
    <div className="content" id="infoMess">
-    <span className="right floated">
-     <Likes />
-    </span>
+    <Likes /> 
     <i className="comment icon"></i>
     {messages.length} Comments
   
@@ -60,8 +58,10 @@ import './Comments.css';
 
 
 
-const mapStateToProps = ( {messages } ) => ({
-  messages
+const mapStateToProps = ( {messages, info } ) => ({
+  messages,
+  info
+  
 });
 
 export default connect(mapStateToProps, {removeMessage}) (Comments);

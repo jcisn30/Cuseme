@@ -4,6 +4,7 @@ const beer = (state = [], action) => {
 	switch (action.type) {
 		case LOAD_BEERS:
 			return [...action.beers];
+	
 		default:
 	      return state;
 	}
