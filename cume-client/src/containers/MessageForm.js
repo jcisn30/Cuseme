@@ -3,6 +3,14 @@ import { connect } from "react-redux";
 import { postNewMessage } from "../store/actions/beer";
 import Comments from "../components/Comments";
 import PropTypes from "prop-types";
+import './MessageForm.css';
+
+
+ 
+
+
+
+
 
 
 
@@ -13,7 +21,9 @@ class MessageForm extends Component {
       message: ""
     };
   }
-
+  
+   
+  
   handleNewMessage = event => {
     event.preventDefault();
     this.props.postNewMessage(this.state.message);
@@ -25,7 +35,6 @@ class MessageForm extends Component {
   
   
   
-
   render() {
    const { errors} = this.props;
 		
@@ -47,20 +56,22 @@ class MessageForm extends Component {
         <input
           type="text"
           className="form-control"
+          data-emojiable="true"
           value={this.state.message}
           onChange={e => this.setState({ message: e.target.value })
+          
           }
         />
-        	
+    
         </div>
-        
+      
         <button type="submit"  className="ui button">
           Add Comment
         </button>
       </form>
     
   
-
+ 
 
 
  </div>
@@ -68,6 +79,11 @@ class MessageForm extends Component {
 }
 }
 
+
+ 
+
+    
+     
 function mapStateToProps(state) {
   return {
     message: state.message

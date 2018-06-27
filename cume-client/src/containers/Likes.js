@@ -57,7 +57,7 @@ class Likes extends Component {
     return(
       
       <div className="likes">
-      <i className="em em-rolling_on_the_floor_laughing" onClick={this.updateLikes}></i>
+      <i className="em em-rolling_on_the_floor_laughing faa-shake animated-hover" onClick={this.updateLikes}></i>
         
       </div>
     );

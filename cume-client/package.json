@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "axios": "^0.18.0",
+    "emoji-unicode": "^1.0.9",
     "json-api-normalizer": "^0.4.10",
     "jwt-decode": "^2.2.0",
     "moment": "^2.21.0",
@@ -11,6 +12,7 @@
     "react-dedux": "^0.4.0-beta.4",
     "react-dom": "^16.2.0",
     "react-moment": "^0.7.0",
+    "react-native-simple-emoji-picker": "^0.1.0",
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.1.1",

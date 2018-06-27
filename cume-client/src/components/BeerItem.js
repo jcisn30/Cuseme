@@ -1,11 +1,10 @@
 import React from 'react';
 import {connect} from "react-redux";
 import {Link } from 'react-router-dom';
-import Likes from "../containers/Likes";
+// import Likes from "../containers/Likes";
 import {getCurrentBeer, getBeerInfo} from "../store/actions/beer";
 // import {getComments} from "../store/actions/comments";
 import './BeerItem.css';
-
 
 
 const BeerItem = ({title, URL, image, active, id, setBeer, created_date, message,likes}) => (
@@ -53,11 +52,15 @@ const BeerItem = ({title, URL, image, active, id, setBeer, created_date, message
 const mapDispatchToProps = (dispatch) => ({
   setBeer(id) {
     return () => {
+     
+     
+
       dispatch(getCurrentBeer(id));
       dispatch(getBeerInfo(id));
       
-       
+       window.location.reload();
     };
+    
   },
 });
 
