@@ -1,54 +1,63 @@
-var db = require('../models');
+const db = require("../models");
 
-exports.getKid = function(req, res){
+
+exports.getKid = async function(req, res, next){
+	try {
     db.Kid.find()
     .then(function(kid){
         res.json(kid);
-    })
-    .catch(function(err){
-        res.send(err);
-    })
-}
+    });
+    }catch(err) {
+		return next(err);
+    }
+};
 
-exports.createKid = function(req, res){
+
+exports.createKid = async function(req, res, next){
+    try{
   db.Kid.create(req.body)
   .then(function(newKid){
-      res.status(201).json(newKid);
+      res.status(200).json(newKid);
   })
-  .catch(function(err){
-      res.send(err);
+  }catch(err) {
+		return next(err);
+  }
+};
+
+
+exports.getKidById = async function(req, res, next){
+    try{
+  db.Kid.findById(req.params.kidId)
+  .then(function(foundKidId){
+      res.json(foundKidId);
+      
   })
+  }catch(err){
+      return next(err);
+  }
 }
 
-
-exports.getKidById = function(req, res){
-   db.Kid.findById(req.params.kidId)
-   .then(function(foundKid){
-       res.json(foundKid);
-   })
-   .catch(function(err){
-       res.send(err);
-   })
-}
-
-exports.updateKid =  function(req, res){
-   db.Kid.findOneAndUpdate()
+exports.updateKid = async function(req, res, next){
+    try{
+   db.Kid.findOneAndUpdate({_id: req.params.kidId}, req.body, { "new": true })
    .then(function(kid){
        res.json(kid);
    })
-   .catch(function(err){
-       res.send(err);
-   })
-}
+   }catch(err){
+       return next(err);
+   }
+};
 
-exports.deleteKid = function(req, res){
+exports.deleteKid = async function(req, res, next){
+    try{
    db.Kid.remove({_id: req.params.kidId}) 
    .then(function(){
        res.json({message: 'We deleted it!'});
    })
-   .catch(function(err){
-       res.send(err);
-   })
+   }catch(err){
+       return next(err);
+   }
 }
+
 
 module.exports = exports;

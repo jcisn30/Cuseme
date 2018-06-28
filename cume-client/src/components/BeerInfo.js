@@ -42,7 +42,7 @@ const BeerInfo = ({info, errors}) =>
 
 const mapStateToProps = ({info}) => ({
   info,
-  
+ 
 });
 
 

@@ -1,43 +1,79 @@
-var mongoose = require('mongoose');
+const mongoose = require('mongoose');
 
-var kidSchema = new mongoose.Schema({
-    Title: {
+const kidSchema = new mongoose.Schema({
+    title: {
         type:  String,
+        
     },
     
-    Image: {
+    id: {
+        type: String,
+       
+    },
+    
+    image: {
         type: String,
         default: false
+        
     },
     
     URL: {
         type: String,
         default: false
+        
     },
     
-    Caption: {
+    caption: {
         type: String,
         default: false
+        
     },
     
-    Description: {
+    description: {
         type: String,
         default: false
+        
     },
     
-    Created_date: {
+    created_date: {
         type: Date,
         default: Date.now
     },
     
-    Active: {
+    likes: {
+        type: Number
+    },
+    
+    
+    
+    active: {
         type: Boolean,
+        default: false
         
-    }
+    },
+    
+      
+   
+    message: [
+        {
+            
+        }
+        
+        ]
+       
+        
     
     
+        
+         
+        
+         
+        
+         
+         
+
 });
 
-var Kid = mongoose.model('Kid', kidSchema);
+const Kid = mongoose.model('Kid', kidSchema);
 
 module.exports = Kid;

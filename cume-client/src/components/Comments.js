@@ -35,7 +35,7 @@ import './Comments.css';
            
         return <div className="comments" key={message._id}    ><span id="errorname"></span><p className="commentPara"><img className="profileImg" src={message.userProfileImg || DefaultProfileImg} alt="profileImage" /> <span className="userName">{message.username}</span> <span> </span> {message.text}</p>
         <Moment fromNow className="commentTime">{message.createdAt}</Moment> <a className="delete"  onClick={removeMessage.bind(this, message._id, message.user)}>Delete</a> 
-				
+			
 	   </div>
 	   
            
@@ -61,7 +61,7 @@ import './Comments.css';
 const mapStateToProps = ( {messages, info } ) => ({
   messages,
   info
-  
+  	
 });
 
 export default connect(mapStateToProps, {removeMessage}) (Comments);

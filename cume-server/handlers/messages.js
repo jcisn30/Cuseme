@@ -9,13 +9,8 @@ exports.createMessage = async function(req, res, next)
     
     try{
        
-		 //let userName = await db.User.find( {username: []});
-		
-		// let userName = await db.User.find({id:req.params.id}, {username:1}
-		
-		// );
-		
-		
+	
+			//find user name
 		
 			let userName = await db.User.findOne({_id: req.params.id}).select(['username']).exec();
 
@@ -33,6 +28,7 @@ exports.createMessage = async function(req, res, next)
 			text: req.body.text,
 			user: req.params.id, 
 			beer: req.params.id1,
+			kid: req.paras.id2,
 		    username:  username,
 		    userProfileImg: userProfileImg
 			
@@ -50,6 +46,9 @@ exports.createMessage = async function(req, res, next)
 		let foundBeer = await db.Beer.findById(req.params.id1);
 		foundBeer.message.push(message);
 		await foundBeer.save();
+		let foundKid = await db.Kid.findById(req.params.id2);
+		foundKid.message.push(message);
+		await foundKid.save();
 
 		
 		
@@ -79,13 +78,14 @@ exports.getMessageById = async function(req, res, next){
        return next(err);
    }
 }
-exports.deleteMessage = async function(req, res, next) {
+exports.deleteBeerMessage = async function(req, res, next) {
 	try {
 		let message = await db.Message.findById(req.params.messageId);
 	let foundBeer = await db.Beer.findById(req.params.id1);
     foundBeer.message.remove(message);
     await foundBeer.save();
     return res.status(200).json(foundBeer);
+    
 	} catch(err) {
 		return next(err);
 	}

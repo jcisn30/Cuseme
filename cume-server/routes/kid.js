@@ -1,16 +1,22 @@
-var express = require('express');
-var router = express.Router();
-var db = require("../models");
-var helpers = require("../handlers/kid");
+const express = require("express");
+const router = express.Router({ mergeParams: true});
 
 
+const { createKid, getKid, deleteKid, updateKid, getKidById} = require("../handlers/kid");
+
+//prefix - /api/beers
 router.route('/')
- .get(helpers.getKid)
- .post(helpers.createKid)
- 
-router.route('/:kidId')
-  .get(helpers.getKidById)
-  .put(helpers.updateKid)
-  .delete(helpers.deleteKid)
+ .get(getKid)
+   
   
+
+ .post(createKid)
+
+//prefix - /api/kid/kidid
+router
+.route("/:kidId")
+.get(getKidById)
+.put(updateKid)
+.delete(deleteKid);
+
 module.exports = router;

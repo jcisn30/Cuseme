@@ -1,3 +1,4 @@
+
 import React from 'react';
 import {connect} from "react-redux";
 import {Link } from 'react-router-dom';
@@ -58,10 +59,11 @@ const mapDispatchToProps = (dispatch) => ({
       dispatch(getCurrentBeer(id));
       dispatch(getBeerInfo(id));
       
-       window.location.reload();
+      
     };
     
   },
+  
 });
 
 
