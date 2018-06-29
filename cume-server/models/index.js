@@ -10,6 +10,8 @@ mongoose.connect('mongodb://localhost/cuseme', {
 module.exports.User = require("./user");
 module.exports.Message = require("./message");
 module.exports.Beer = require("./beer");
+module.exports.Kid = require("./kid");
+
 
 
 

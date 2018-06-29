@@ -90,3 +90,17 @@ exports.deleteBeerMessage = async function(req, res, next) {
 		return next(err);
 	}
 };
+
+
+exports.deleteKidMessage = async function(req, res, next) {
+	try {
+		let message = await db.Message.findById(req.params.messageId);
+	let foundKid = await db.Kid.findById(req.params.id2);
+    foundKid.message.remove(message);
+    await foundKid.save();
+    return res.status(200).json(foundKid);
+    
+	} catch(err) {
+		return next(err);
+	}
+};

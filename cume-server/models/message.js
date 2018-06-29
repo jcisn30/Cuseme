@@ -25,6 +25,10 @@ const messageSchema = new mongoose.Schema({
      beer: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "Beer"
+    },
+    kid: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Kid"
     }
 }, {
     timestamps: true

@@ -4,7 +4,7 @@ const router = express.Router({ mergeParams: true});
 
 const { createKid, getKid, deleteKid, updateKid, getKidById} = require("../handlers/kid");
 
-//prefix - /api/beers
+//prefix - /api/kid
 router.route('/')
  .get(getKid)
    
