@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect} from 'react-redux';
-import MessageForm from "../containers/MessageForm";
+import MessageForm from "../containers/BeerMessageForm";
 import './BeerInfo.css';
 // import {removeMessage } from "../store/actions/messages";
 

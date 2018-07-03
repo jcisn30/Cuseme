@@ -1,0 +1,18 @@
+.column {
+  padding-left: 2%;
+}
+
+.columnImg {
+  height: 100%;
+  width: 100%;
+}
+
+.content {
+  text-align: center !important;
+  padding-bottom: 2% !important;
+  padding-top: 2% !important;
+}
+
+i.icon.outline {
+  padding-right: 10%;
+}

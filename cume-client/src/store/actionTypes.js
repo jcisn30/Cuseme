@@ -9,3 +9,6 @@ export const REMOVE_MESSAGE = "REMOVE_MESSAGE";
 export const SET_COMMENTS = "SET_COMMENTS";
 export const SET_LIKES = "SET_LIKES";
 export const LOAD_LIKES = "LOAD_LIKES";
+export const LOAD_KIDS = "LOAD_KIDS";
+export const LOAD_KID = "LOAD_KID";
+export const SET_KID_INFO = "SET_KID_INFO";

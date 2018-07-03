@@ -2,6 +2,7 @@ import { apiCall } from "../../services/api";
 import { addError } from "./errors";
 import { LOAD_MESSAGES, REMOVE_MESSAGE } from "../actionTypes";
 import {getCurrentBeer, getBeerInfo} from "./beer";
+import {getCurrentKid, getKidInfo} from "./kid";
 
 export const loadMessages = messages => ({
   type: LOAD_MESSAGES,
@@ -13,9 +14,20 @@ export const remove = id => ({
   id
 });
 
-export const removeMessage = (user_id, message_id, beer_id) => {
+export const removeBeerMessage = (user_id, message_id, beer_id) => {
   return dispatch => {
     return apiCall("delete", `/api/beer/${beer_id}/users/${user_id}/messages/${message_id}`)
+      .then(() => dispatch(remove(message_id)))
+      .catch(err => {
+        addError(err.message);
+      });
+  };
+};
+
+
+export const removeKidMessage = (user_id, message_id, kid_id) => {
+  return dispatch => {
+    return apiCall("delete", `/api/kid/${kid_id}/users/${user_id}/messages/${message_id}`)
       .then(() => dispatch(remove(message_id)))
       .catch(err => {
         addError(err.message);

@@ -5,7 +5,8 @@ const cors = require("cors");
 const bodyParser = require("body-parser");
 const errorHandler = require("./handlers/error");
 const authRoutes = require("./routes/auth");
-const messagesRoutes = require("./routes/messages");
+const beerMessagesRoutes = require("./routes/beerMessages");
+const kidMessagesRoutes = require("./routes/kidMessages");
 const { logRequired, ensureCorrectUser } = require("./middleware/auth"); 
 const beerRoutes = require("./routes/beer");
 const kidRoutes = require("./routes/kid");
@@ -20,7 +21,8 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 
 app.use("/api/auth", authRoutes);
-app.use("/api/beer/:id1/users/:id/messages", logRequired, ensureCorrectUser,  messagesRoutes);
+app.use("/api/beer/:id1/users/:id/messages", logRequired, ensureCorrectUser,  beerMessagesRoutes);
+app.use("/api/kid/:id1/users/:id/messages", logRequired, ensureCorrectUser,  kidMessagesRoutes);
 
 app.use('/api/beer', beerRoutes);
 app.use('/api/kid', kidRoutes);
@@ -38,7 +40,7 @@ app.get("/api/beer/:id1/users/:id/message", logRequired, async function(req, res
 });
 
 
-app.get("/api/kid/:id2/users/:id/message", logRequired, async function(req, res, next){
+app.get("/api/kid/:id1/users/:id/message", logRequired, async function(req, res, next){
   try {
     let messages = await db.Message.find().sort({ createdAt: "desc"}).populate("user", {
       username: true,

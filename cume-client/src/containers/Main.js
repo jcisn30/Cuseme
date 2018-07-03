@@ -5,6 +5,7 @@ import Homepage from "../components/Homepage";
 import AuthForm from "../components/AuthForm";
 import UserAside from "../components/UserAside";
 import BeerInfo from "../components/BeerInfo";
+import KidInfo from "../components/KidInfo";
 import { authUser } from "../store/actions/auth";
 import { removeError } from "../store/actions/errors";
 
@@ -37,13 +38,23 @@ const Main = props => {
                 );
             }}
             />
-            
-             <Route exact path="/:id" render={props => {
+            <Route exact path="/beer:id" render={props => {
                 return (
-                    <BeerInfo removeError={removeError} errors={errors} {...props} />
+                    
+                     <BeerInfo removeError={removeError} errors={errors} {...props} />
                 );
             }}
             />
+            
+            <Route exact path="/kid:id" render={props => {
+                return (
+                    
+                     <KidInfo removeError={removeError} errors={errors} {...props} />
+                );
+            }}
+            />
+            
+            
           </Switch>
         </div>
         );

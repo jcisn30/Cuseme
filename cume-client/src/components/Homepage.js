@@ -1,5 +1,6 @@
 import React from "react";
 import BeerTimeLine from "./BeerTimeLine";
+import KidTimeLine from "./KidTimeLine";
 
 const Homepage = (beer) => (
     <div>
@@ -7,9 +8,10 @@ const Homepage = (beer) => (
       A Day Without Laughter Is A Day Wasted
     </h3>
      <div className="column">
-     <BeerTimeLine
-      
-     />
+     <BeerTimeLine/>
+     </div>
+      <div className="column">
+     <KidTimeLine/>
      </div>
     </div>
     

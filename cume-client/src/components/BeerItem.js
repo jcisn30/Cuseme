@@ -12,7 +12,7 @@ const BeerItem = ({title, URL, image, active, id, setBeer, created_date, message
 	
 	<div className="column">
 	
-	 <Link to={{pathname: `/${id}`}} onClick={setBeer(id)}>
+	 <Link to={{pathname: `/beer${id}`}} onClick={setBeer(id)}>
 		<div className="ui raised segment"  >
 		
 			<h5>{title}</h5>
@@ -37,10 +37,10 @@ const BeerItem = ({title, URL, image, active, id, setBeer, created_date, message
 	
 	<div className="ui segment">
 	<div className="content">
-		 <Link to={{pathname: `/${id}`}} onClick={setBeer(id)}>
+		 <Link to={{pathname: `/bber${id}`}} onClick={setBeer(id)}>
   	<i className="comment outline icon"> Comment</i></Link>
 			<span className="right floated">
-			<Link to={{pathname: `/${id}`}} onClick={setBeer(id)}>
+			<Link to={{pathname: `/beer${id}`}} onClick={setBeer(id)}>
      <i className="em em-rolling_on_the_floor_laughing"></i> {likes}</Link>
      </span>
      </div>

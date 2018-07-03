@@ -6,6 +6,9 @@ import id from "./beer";
 import info from "./beer";
 import messages from "./comments";
 import likes from "./likes";
+import kids from "./kids";
+import idk from "./kid";
+import infok from "./kid";
 
 // import { reducer as formReducer } from 'redux-form';
 
@@ -16,7 +19,10 @@ const rootReducer = combineReducers({
 	id,
 	info,
 	messages,
-	likes
+	likes,
+	idk,
+	infok,
+	kids
 	
 	
 });
