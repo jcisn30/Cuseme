@@ -3,7 +3,7 @@
 }
 
 .columnImg {
-  height: 100%;
+  height: 200px !important;
   width: 100%;
 }
 
@@ -15,4 +15,9 @@
 
 i.icon.outline {
   padding-right: 10%;
+}
+
+
+.ui.red.ribbon.label {
+  margin-top: 3%;
 }

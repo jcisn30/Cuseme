@@ -38,9 +38,10 @@ i.icon {
     
 }
 
-.commentTime {
+.ui.feed>.event>.content .date {
     font-size: smaller;
-    padding-left: 12%;
+    padding-left: 2%;
+    
 }
 
 .profileImg {
@@ -51,7 +52,8 @@ i.icon {
 
 .delete {
     font-size: smaller;
-    padding-left: 3%;
+    margin-left: 10%;
+    color: rgba(0,0,0,.4);
 }
 
 #errorname {
@@ -60,4 +62,8 @@ i.icon {
     font-weight: bolder;
     display: block;
     text-align: center;
+}
+
+.commentText {
+    margin-left: 10%;
 }

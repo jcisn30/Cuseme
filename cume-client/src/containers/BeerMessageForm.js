@@ -43,7 +43,7 @@ class MessageForm extends Component {
     return (
       <div>
       <Comments errors={errors}/>
-      <form className="ui form" onSubmit={this.handleNewMessage}>
+      <form className="ui reply form" onSubmit={this.handleNewMessage}>
      	{errors.message && (
 				<div className="ui error message">
 					<div className="header">

@@ -4,6 +4,7 @@ import {configureStore} from "../store";
 import {BrowserRouter as Router} from "react-router-dom";
 import Navbar from "./Navbar";
 import Main from "./Main";
+import Footer from "./Footer";
 import {setAuthorizationToken, setCurrentUser} from "../store/actions/auth";
 import jwtDecode from "jwt-decode";
 
@@ -28,6 +29,7 @@ const App = () => (
       <div className="ui fluid container">
         <Navbar />
         <Main />
+        <Footer />
      </div>
     </Router>
     

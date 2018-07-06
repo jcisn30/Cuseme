@@ -13,6 +13,7 @@ const Homepage = (beer) => (
       <div className="column">
      <KidTimeLine/>
      </div>
+     
     </div>
     
     );
