@@ -4,6 +4,8 @@ import {connect} from "react-redux";
 import {logout} from "../store/actions/auth";
 import Logo from "../images/laughing-horse-clipart-1.jpg";
 import $ from 'jquery'
+// import './Navbar.css';
+import Media from "react-media";
 
 
      
@@ -22,14 +24,17 @@ class Navbar extends Component {
       $(this).addClass('active');
    }); 
         return (
-            
-            <div className="ui pointing stackable menu">
-                <a href='/' className="active item">
+             <Media query="(max-width: 480px)">
+              {matches =>
+            matches ? (
+                 <div className="ui secondary pointing menu mobile">
+                 <a href='/' className="item logo">
                 <img src={Logo} alt="logo"/>
                 </a>
-                    <a  className="item">Hold My Beer</a>
-                    <a className="item">Kids</a>
-                    <a className="item">Funny Reads</a>
+                 
+                    
+                   
+                    
                 {this.props.currentUser.isAuthenticated ? (
                      <div className="right menu">
                      <Link to="/UserAside" className="item">{this.props.currentUser.user.username}</Link>
@@ -44,6 +49,39 @@ class Navbar extends Component {
               
              
             </div>
+            ) : (
+            
+            <div className="ui secondary pointing menu">
+                 <a href='/' className="item logo">
+                <img src={Logo} alt="logo"/>
+                </a>
+                    <a  className="item">Hold My Beer</a>
+                    <a className="item">Kids</a>
+                    <a className="item">Funny Reads</a>
+                    
+                   
+                    
+                {this.props.currentUser.isAuthenticated ? (
+                     <div className="right menu">
+                     <Link to="/UserAside" className="item">{this.props.currentUser.user.username}</Link>
+                     <a className='item' onClick={this.logout}>Log out</a>
+                     </div>
+                ) : (
+              <div className="right menu">
+                    <Link to="/signup" className="item">Sign Up</Link>
+                    <Link to="/signin" className="item">Log In</Link>
+              </div>
+              )}
+              
+             
+            </div>
+             )
+          }
+        </Media>
+            
+            
+             
+            
             
         );
     }

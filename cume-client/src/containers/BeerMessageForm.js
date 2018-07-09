@@ -43,7 +43,7 @@ class MessageForm extends Component {
     return (
       <div>
       <Comments errors={errors}/>
-      <form className="ui reply form" onSubmit={this.handleNewMessage}>
+      <form className="ui form" onSubmit={this.handleNewMessage}>
      	{errors.message && (
 				<div className="ui error message">
 					<div className="header">
@@ -51,10 +51,11 @@ class MessageForm extends Component {
 					</div>
 				</div>
 					)}
-     <div className="field">
+     <div className="ui fluid icon input">
   
         <input
           type="text"
+          placeholder="add comment"
           className="form-control"
           data-emojiable="true"
           value={this.state.message}
@@ -65,9 +66,7 @@ class MessageForm extends Component {
     
         </div>
       
-        <button type="submit"  className="ui button">
-          Add Comment
-        </button>
+      
       </form>
     
   

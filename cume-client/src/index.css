@@ -1,5 +1,5 @@
 body {
-  background-color: #f7f7f7;
+  background-color: white;
   
 }
 
@@ -28,6 +28,7 @@ body {
   border: none;
  font-family: 'Special Elite', cursive;
  font-size: 24px;
+ background-color:white;
 }
 
 .ui.red.ribbon.label {

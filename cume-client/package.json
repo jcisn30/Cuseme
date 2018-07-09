@@ -12,6 +12,7 @@
     "react": "^16.2.0",
     "react-dedux": "^0.4.0-beta.4",
     "react-dom": "^16.2.0",
+    "react-media": "^1.8.0",
     "react-moment": "^0.7.0",
     "react-native-simple-emoji-picker": "^0.1.0",
     "react-redux": "^5.0.7",

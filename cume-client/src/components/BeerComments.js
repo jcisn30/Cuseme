@@ -33,7 +33,7 @@ import './Comments.css';
       {messages.map((message, i) => {
         // const dateArray = comment.user.split('-');
            
-        return <div className="comments" key={message._id}    ><span id="errorname"></span><p className="commentPara"><img className="profileImg" src={message.userProfileImg || DefaultProfileImg} alt="profileImage" /> <a className="userName">{message.username}</a> <Moment fromNow className="commentTime date">{message.createdAt}</Moment></p>
+        return <div className="comments" key={message._id}    ><span id="errorname"></span><p className="commentPara"><img className="profileImg ui avatar image" src={message.userProfileImg || DefaultProfileImg} alt="profileImage" /> <a className="userName">{message.username}</a> <Moment fromNow className="commentTime date">{message.createdAt}</Moment></p>
          <p className="commentText">{message.text}</p><a className="delete reply"  onClick={removeMessage.bind(this, message._id, message.user)}>Delete</a> 
 			
 	   </div>
