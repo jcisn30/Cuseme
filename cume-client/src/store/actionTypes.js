@@ -12,3 +12,6 @@ export const LOAD_LIKES = "LOAD_LIKES";
 export const LOAD_KIDS = "LOAD_KIDS";
 export const LOAD_KID = "LOAD_KID";
 export const SET_KID_INFO = "SET_KID_INFO";
+export const LOAD_ARTICLES = "LOAD_ARTICLES";
+export const LOAD_ARTICLE = "LOAD_ARTICLE";
+export const SET_ARTICLE_INFO = "SET_ARTICLE_INFO";

@@ -7,9 +7,11 @@ const errorHandler = require("./handlers/error");
 const authRoutes = require("./routes/auth");
 const beerMessagesRoutes = require("./routes/beerMessages");
 const kidMessagesRoutes = require("./routes/kidMessages");
+const articleMessagesRoutes = require("./routes/articleMessages");
 const { logRequired, ensureCorrectUser } = require("./middleware/auth"); 
 const beerRoutes = require("./routes/beer");
 const kidRoutes = require("./routes/kid");
+const articleRoutes = require("./routes/article");
 const db = require("./models");
 const PORT = 8081;
 
@@ -23,9 +25,11 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use("/api/auth", authRoutes);
 app.use("/api/beer/:id1/users/:id/messages", logRequired, ensureCorrectUser,  beerMessagesRoutes);
 app.use("/api/kid/:id1/users/:id/messages", logRequired, ensureCorrectUser,  kidMessagesRoutes);
+app.use("/api/article/:id1/users/:id/messages", logRequired, ensureCorrectUser,  articleMessagesRoutes);
 
 app.use('/api/beer', beerRoutes);
 app.use('/api/kid', kidRoutes);
+app.use('/api/article', articleRoutes);
 
 app.get("/api/beer/:id1/users/:id/message", logRequired, async function(req, res, next){
   try {
@@ -41,6 +45,20 @@ app.get("/api/beer/:id1/users/:id/message", logRequired, async function(req, res
 
 
 app.get("/api/kid/:id1/users/:id/message", logRequired, async function(req, res, next){
+  try {
+    let messages = await db.Message.find().sort({ createdAt: "desc"}).populate("user", {
+      username: true,
+      profileImageUrl:true
+    });
+    return res.status(200).json(messages);
+  } catch(err) {
+    return next(err);
+  }
+});
+
+
+
+app.get("/api/article/:id1/users/:id/message", logRequired, async function(req, res, next){
   try {
     let messages = await db.Message.find().sort({ createdAt: "desc"}).populate("user", {
       username: true,

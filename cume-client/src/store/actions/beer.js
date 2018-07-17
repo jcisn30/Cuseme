@@ -60,7 +60,7 @@ export function getBeerInfo(id) {
          dispatch(setComments(info.message));
         dispatch(setLikes(info.likes));
         dispatch(removeError());
-      window.location.reload()
+      
 			})
 			.catch(err => {
 			dispatch(addError(err.message));

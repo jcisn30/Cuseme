@@ -3,22 +3,34 @@ import { connect } from "react-redux";
 import { postNewMessage } from "../store/actions/kid";
 import Comments from "../components/KidComments";
 import PropTypes from "prop-types";
+import EmojiPicker from 'emoji-picker-react';
+import JSEMOJI from 'emoji-js';
 import './MessageForm.css';
 
 
  
+//emoji set up
+let jsemoji = new JSEMOJI();
+// set the style to emojione (default - apple)
+jsemoji.img_set = 'emojione';
+// set the storage location for all emojis
+jsemoji.img_sets.emojione.path =   'https://cdn.jsdelivr.net/emojione/assets/3.0/png/32/';
+
+// alert(jsemoji.replace_mode);
 
 
-
-
-
+//some more settings...
+jsemoji.supports_css = false;
+jsemoji.allow_native = true;
+jsemoji.replace_mode = 'unified';
 
 
 class MessageForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      message: ""
+      message: "",
+      emojiShown: false
     };
   }
   
@@ -33,6 +45,20 @@ class MessageForm extends Component {
   };
   
   
+  toogleEmojiState = () => {
+    this.setState({
+      emojiShown: !this.state.emojiShown
+    });
+  }
+  
+  handleEmojiClick = (n, e) => {
+    let emoji = jsemoji.replace_colons(`:${e.name}:`);
+    this.setState({
+      message: this.state.message + emoji
+     
+    });
+  }
+
   
   
   render() {
@@ -51,23 +77,23 @@ class MessageForm extends Component {
 					</div>
 				</div>
 					)}
-     <div className="field">
+     <div className="ui fluid action input">
   
         <input
           type="text"
           className="form-control"
-          data-emojiable="true"
+          // data-emojiable="true"
           value={this.state.message}
           onChange={e => this.setState({ message: e.target.value })
           
           }
         />
+        
+         <div className="ui icon button" onClick={this.toogleEmojiState}> <i className="smile outline icon"  ></i></div>
     
         </div>
-      
-        <button type="submit"  className="ui button">
-          Add Comment
-        </button>
+      {this.state.emojiShown &&  <EmojiPicker onEmojiClick={this.handleEmojiClick}/>}
+       
       </form>
     
   

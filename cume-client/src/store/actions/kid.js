@@ -60,7 +60,7 @@ export function getKidInfo(id) {
          dispatch(setComments(infok.message));
         dispatch(setLikes(infok.likes));
         dispatch(removeError());
-      window.location.reload()
+      
 			})
 			.catch(err => {
 			dispatch(addError(err.message));

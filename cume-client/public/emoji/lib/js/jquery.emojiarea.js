@@ -353,6 +353,9 @@
       'data-type': 'input',
       'placeholder': $textarea.attr('placeholder'),
       'contenteditable': 'true',
+      
+      // "onkeypress": "return comment(event)",
+       
     });
 
     /*

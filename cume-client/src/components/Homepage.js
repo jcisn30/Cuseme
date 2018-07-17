@@ -1,6 +1,7 @@
 import React from "react";
 import BeerTimeLine from "./BeerTimeLine";
 import KidTimeLine from "./KidTimeLine";
+import ArticleTimeLine from "./ArticleTimeLine";
 
 const Homepage = (beer) => (
     <div>
@@ -13,7 +14,7 @@ const Homepage = (beer) => (
       <div className="column">
      <KidTimeLine/>
      </div>
-     
+     <ArticleTimeLine/>
     </div>
     
     );

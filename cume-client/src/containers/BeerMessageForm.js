@@ -3,45 +3,88 @@ import { connect } from "react-redux";
 import { postNewMessage } from "../store/actions/beer";
 import Comments from "../components/BeerComments";
 import PropTypes from "prop-types";
+import EmojiPicker from 'emoji-picker-react';
+import JSEMOJI from 'emoji-js';
 import './MessageForm.css';
 
 
- 
+
+
+
+//emoji set up
+let jsemoji = new JSEMOJI();
+// set the style to emojione (default - apple)
+jsemoji.img_set = 'emojione';
+// set the storage location for all emojis
+jsemoji.img_sets.emojione.path =   'https://cdn.jsdelivr.net/emojione/assets/3.0/png/32/';
+
+// alert(jsemoji.replace_mode);
 
 
 
 
 
+//some more settings...
+jsemoji.supports_css = false;
+jsemoji.allow_native = true;
+jsemoji.replace_mode = 'unified';
 
 
 class MessageForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      message: ""
+      message: "",
+    emojiShown: false
     };
+    
+   
   }
   
-   
-  
-  handleNewMessage = event => {
-    event.preventDefault();
+ 
+
+
+
+    
+ 
+   handleNewMessage = event => {
+    
+  event.preventDefault();
     this.props.postNewMessage(this.state.message);
     this.setState({ message: ""});
-    
-    
-  };
+
+};
+
+
+ toogleEmojiState = () => {
+    this.setState({
+      emojiShown: !this.state.emojiShown
+    });
+  }
+ 
+
+
   
-  
-  
-  
+  handleEmojiClick = (n, e) => {
+    let emoji = jsemoji.replace_colons(`:${e.name}:`);
+    this.setState({
+      message: this.state.message + emoji
+     
+    });
+  }
+
+
+
+
   render() {
    const { errors} = this.props;
 		
-   
+    
 			
     return (
+
       <div>
+             
       <Comments errors={errors}/>
       <form className="ui form" onSubmit={this.handleNewMessage}>
      	{errors.message && (
@@ -51,26 +94,26 @@ class MessageForm extends Component {
 					</div>
 				</div>
 					)}
-     <div className="ui fluid icon input">
+     <div className="ui fluid action input">
   
         <input
-          type="text"
+          type="input"
           placeholder="add comment"
           className="form-control"
-          data-emojiable="true"
+          // data-emojiable="true"
+          // data-emoji-picker="true"
           value={this.state.message}
-          onChange={e => this.setState({ message: e.target.value })
-          
-          }
-        />
+          onChange={e => this.setState({ message: e.target.value })}/>
+       
+            <div className="ui icon button" onClick={this.toogleEmojiState}> <i className="smile outline icon"  ></i></div>
+        
+          </div>
+         {this.state.emojiShown &&  <EmojiPicker onEmojiClick={this.handleEmojiClick}/>}
+      
+      
     
-        </div>
-      
-      
       </form>
-    
-  
- 
+   
 
 
  </div>
@@ -79,9 +122,9 @@ class MessageForm extends Component {
 }
 
 
- 
 
-    
+
+
      
 function mapStateToProps(state) {
   return {

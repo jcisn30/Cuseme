@@ -35,6 +35,17 @@ export const removeKidMessage = (user_id, message_id, kid_id) => {
   };
 };
 
+
+export const removeArticleMessage = (user_id, message_id, article_id) => {
+  return dispatch => {
+    return apiCall("delete", `/api/article/${article_id}/users/${user_id}/messages/${message_id}`)
+      .then(() => dispatch(remove(message_id)))
+      .catch(err => {
+        addError(err.message);
+      });
+  };
+};
+
 // export const fetchMessages = (getState) => {
 //   let { currentUser, info } = getState();
 //   const id = currentUser.user.id;
