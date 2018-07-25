@@ -124,6 +124,29 @@ export const postNewMessage = (text) => (dispatch, getState) => {
 };
 
 
+
+export const postNewIMessage = (img) => (dispatch, getState) => {
+  let { currentUser, info} = getState();
+  const id = currentUser.user.id;
+  const id1 = info._id;
+  return apiCall("post", `/api/beer/${id1}/users/${id}/messages`, { img })
+    .then(res=> {
+       
+      
+      // dispatch(getCurrentBeer(id1));
+      dispatch(getBeerInfo(id1));
+      
+        
+    })
+   
+		
+       .catch(err => {
+			dispatch(addError(err.message));
+         
+          
+        });
+};
+
 export const like = (likes) => (dispatch, getState) => {
   let { info} = getState();
   const id1 = info._id;

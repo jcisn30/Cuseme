@@ -19,10 +19,7 @@ class Navbar extends Component {
    
     
     render(){
-        $('.ui.menu .item').on('click', function() {
-      $('.ui.menu .item').removeClass('active');
-      $(this).addClass('active');
-   }); 
+       
         return (
              <Media query="(max-width: 480px)">
               {matches =>
@@ -52,10 +49,10 @@ class Navbar extends Component {
             ) : (
             
             <div className="ui secondary pointing menu">
-                 <a href='/' className="item logo">
+                 <a href='/' className="active item logo">
                 <img src={Logo} alt="logo"/>
                 </a>
-                    <a  className="item">Hold My Beer</a>
+                    <a className="item">Hold My Beer</a>
                     <a className="item">Kids</a>
                     <a className="item">Funny Reads</a>
                     

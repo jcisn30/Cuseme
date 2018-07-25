@@ -28,7 +28,7 @@ exports.createBeerMessage = async function(req, res, next)
 			text: req.body.text,
 			user: req.params.id, 
 			beer: req.params.id1,
-			
+			img: req.params.url,
 		    username:  username,
 		    userProfileImg: userProfileImg
 			

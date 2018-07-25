@@ -8,6 +8,10 @@ const messageSchema = new mongoose.Schema({
         required: false,
         maxLength: 160
     },
+    
+    img: {
+        type: String,
+    },
     user: {
         type: mongoose.Schema.Types.ObjectId,
         username: String,
