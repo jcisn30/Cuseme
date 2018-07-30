@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+import './AuthForm.css';
 
 class AuthForm extends Component {
 	constructor(props) {

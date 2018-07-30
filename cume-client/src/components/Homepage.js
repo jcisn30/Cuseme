@@ -2,6 +2,7 @@ import React from "react";
 import BeerTimeLine from "./BeerTimeLine";
 import KidTimeLine from "./KidTimeLine";
 import ArticleTimeLine from "./ArticleTimeLine";
+import './Homepage.css';
 
 const Homepage = (beer) => (
     <div>

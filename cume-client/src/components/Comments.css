@@ -80,6 +80,22 @@ width: 75%;
 }
 
 .react-giphy-select__src-components-GiphySelect-styles__select___25GhN {
-    
+    width: 310px !important;
     margin: auto;
+}
+
+.react-giphy-select__src-components-GiphyList-styles__list___Tdg5X {
+    width: 300px !important;
+}
+
+
+@media only screen and (max-width: 480px)  {
+    .ui.action.input:not([class*="left action"])>input {
+        margin-bottom: 10%;
+    }
+    
+    .ui.action.input:not([class*="left action"])>.button:not(:first-child), .ui.action.input:not([class*="left action"])>.buttons:not(:first-child)>.button, .ui.action.input:not([class*="left action"])>.dropdown:not(:first-child){
+        
+    margin-bottom: 10%;
+    }
 }

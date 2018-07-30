@@ -37,6 +37,7 @@ const BeerItem = ({title, URL, image, active, id, setBeer, created_date, message
 	
 	<div className="ui segment">
 	<div className="content">
+	<p>This is where the description would go, funny description that is</p>
 		 <Link to={{pathname: `/beer${id}`}} onClick={setBeer(id)}>
   	<i className="comment outline icon"> Comment</i></Link>
 			<span className="right floated">
