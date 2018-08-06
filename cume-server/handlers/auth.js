@@ -1,3 +1,5 @@
+// ----- User login and signup section database actions ------  //
+
 const db = require("../models");
 const jwt = require("jsonwebtoken");
 

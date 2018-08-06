@@ -1,3 +1,5 @@
+// ------ Article Section Schema ------ //
+
 const mongoose = require('mongoose');
 
 const articleSchema = new mongoose.Schema({

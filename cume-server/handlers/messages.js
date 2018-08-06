@@ -1,9 +1,11 @@
+// ----- Messages/Comments section database CRUD actions ------  //
+
+
+
 const db = require("../models");
 
 
-	
-
-
+// ------ Beer Section Comments ------ //	
 exports.createBeerMessage = async function(req, res, next)
 	{
     
@@ -67,7 +69,7 @@ exports.createBeerMessage = async function(req, res, next)
 
 
 
-
+// -------- Kid Section Comments ------ ///
 exports.createKidMessage = async function(req, res, next)
 	{
     
@@ -130,6 +132,7 @@ exports.createKidMessage = async function(req, res, next)
 };
 
 
+// ------- Article Section Comments ------ //
 exports.createArticleMessage = async function(req, res, next)
 	{
     
@@ -204,6 +207,8 @@ exports.getMessageById = async function(req, res, next){
        return next(err);
    }
 }
+
+// ------- Beer Section Delete Comment ------ //
 exports.deleteBeerMessage = async function(req, res, next) {
 	try {
 		let message = await db.Message.findById(req.params.messageId);
@@ -218,6 +223,8 @@ exports.deleteBeerMessage = async function(req, res, next) {
 };
 
 
+
+// ------- Kid Section Delete Comment ------ //
 exports.deleteKidMessage = async function(req, res, next) {
 	try {
 		let message = await db.Message.findById(req.params.messageId);
@@ -232,6 +239,8 @@ exports.deleteKidMessage = async function(req, res, next) {
 };
 
 
+
+// ------- Article Section Delete Comment ------ //
 exports.deleteArticleMessage = async function(req, res, next) {
 	try {
 		let message = await db.Message.findById(req.params.messageId);

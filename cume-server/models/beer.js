@@ -1,3 +1,6 @@
+// ------ Beer Section Schema ------ //
+
+
 const mongoose = require('mongoose');
 
 const beerSchema = new mongoose.Schema({

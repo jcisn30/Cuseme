@@ -1,3 +1,6 @@
+// ------ Message/Comment Section Schema ------ //
+
+
 const mongoose = require("mongoose");
 
 

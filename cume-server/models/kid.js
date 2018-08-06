@@ -1,3 +1,6 @@
+// ------ Kid Section Schema ------ //
+
+
 const mongoose = require('mongoose');
 
 const kidSchema = new mongoose.Schema({

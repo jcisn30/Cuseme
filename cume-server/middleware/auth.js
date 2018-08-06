@@ -1,3 +1,5 @@
+// ------- User Login via json web token------ //
+
 require("dotenv").load();
 const jwt = require("jsonwebtoken");
 
