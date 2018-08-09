@@ -1,6 +1,7 @@
 import React from "react";
 import KidList from "../containers/KidList";
 
+// ---- Main Kid section TimeLine ---- //
 const KidTimeLine = props => {
 	return (
 		<div className="ui four column doubling stackable grid container">

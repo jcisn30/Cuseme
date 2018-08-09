@@ -6,16 +6,13 @@ import './BeerInfo.css';
 import Media from "react-media";
 
 
-
-
-
+// ---- Beer detailed page ---- //
 const BeerInfo = ({info, errors}) => 
 	 <Media query="(max-width: 480px)">
               {matches =>
             matches ? (
-  
   <div>	
-<div className="ui grid">
+  <div className="ui grid">
   <div className="sixteen wide column">
   <div className="content" id="infoTitle">
     <div className="left floated meta">{info.title}</div>
@@ -26,22 +23,14 @@ const BeerInfo = ({info, errors}) =>
  
   <MessageForm errors={errors} />
   
-  
-    
-</div>
-</div>
-
-
-                   
-                        
- 
-
+    </div>
+  </div>
 </div>
 
   ) : (
     
      <div>	
-<div className="ui two column centered grid">
+  <div className="ui two column centered grid">
   <div className="ui card">
   <div className="content" id="infoTitle">
     <div className="left floated meta">{info.title}</div>
@@ -52,23 +41,11 @@ const BeerInfo = ({info, errors}) =>
  
   <MessageForm errors={errors} />
   
-  
-    
-</div>
-</div>
-
-
-                   
-                        
- 
-
+    </div>
+  </div>
 </div>
 )}
 </Media>
-
-  
-
- 
 
 
 const mapStateToProps = ({info}) => ({
@@ -77,8 +54,6 @@ const mapStateToProps = ({info}) => ({
 });
 
 
- 
-            
             
 
 export default connect(mapStateToProps)(BeerInfo);

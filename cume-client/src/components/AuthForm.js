@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import './AuthForm.css';
 
+
+// ---- User sign up and sign in forms ---- ///
 class AuthForm extends Component {
 	constructor(props) {
 		super(props);

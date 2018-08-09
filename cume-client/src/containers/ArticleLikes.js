@@ -3,10 +3,7 @@ import { connect } from "react-redux";
 import { like } from "../store/actions/article";
 
 
-
-
-
-
+// ---- Article likes counter --- //
 class Likes extends Component {
   constructor(props) {
     super(props);

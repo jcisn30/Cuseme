@@ -6,6 +6,8 @@ import PropTypes from "prop-types";
 import EmojiPicker from 'emoji-picker-react';
 import JSEMOJI from 'emoji-js';
 import './MessageForm.css';
+import GiphySelect from 'react-giphy-select';
+import 'react-giphy-select/lib/styles.css';
 
 
  
@@ -35,7 +37,8 @@ class MessageForm extends Component {
     super(props);
     this.state = {
       message: "",
-      emojiShown: false
+      emojiShown: false,
+      gifShown: false
     };
   }
   
@@ -59,11 +62,27 @@ class MessageForm extends Component {
   handleEmojiClick = (n, e) => {
     let emoji = jsemoji.replace_colons(`:${e.name}:`);
     this.setState({
-      message: this.state.message + emoji
-     
+      message: this.state.message + emoji,
+     emojiShown: !this.state.emojiShown
     });
   }
   
+  
+  toogleGifState = () => {
+    this.setState({
+      gifShown: !this.state.gifShown
+    });
+  }
+ 
+
+ handleGifClick = (results) => {
+  // console.log(results.images.original.url)
+    this.setState({
+      message: results.images.original.url
+     
+    });
+   
+  }
   
   
   render() {
@@ -85,22 +104,25 @@ class MessageForm extends Component {
      <div className="ui fluid action input">
   
         <input
-          type="text"
+          // type="input"
+          placeholder="add comment"
           className="form-control"
           // data-emojiable="true"
-          value={this.state.message}
-          onChange={e => this.setState({ message: e.target.value })
-          
-          }
-        />
-      <div className="ui icon button" onClick={this.toogleEmojiState}> <i className="smile outline icon"  ></i></div>
-        </div>
-       {this.state.emojiShown &&  <EmojiPicker onEmojiClick={this.handleEmojiClick}/>}
-        
+          // data-emoji-picker="true"
+          value={ this.state.message}
+         
+          onChange={e => this.setState({ message: e.target.value })}/>
+      
+            <div className="ui icon button" onClick={this.toogleEmojiState}> <i className="smile outline icon"  ></i></div>
+          <div className="ui icon button" onClick={this.toogleGifState}> <i className="video icon"  ></i></div>
+          </div>
+         {this.state.emojiShown &&  <EmojiPicker onEmojiClick={this.handleEmojiClick}/>}
+      <div>
+      {this.state.gifShown &&  <GiphySelect onEntrySelect={this.handleGifClick}  />}
+
+    </div>
       </form>
-    
-  
- 
+   
 
 
  </div>

@@ -4,6 +4,7 @@ import KidTimeLine from "./KidTimeLine";
 import ArticleTimeLine from "./ArticleTimeLine";
 import './Homepage.css';
 
+// ---- HomePage ---- //
 const Homepage = (beer) => (
     <div>
     <h3 className="ui block header">

@@ -48,9 +48,6 @@ class MessageForm extends Component {
   
  
 
-
-
-    
  
    handleNewMessage = event => {
     
@@ -62,13 +59,6 @@ class MessageForm extends Component {
 
 
 
- handleNewIMessage = event => {
-    
-  event.preventDefault();
-    this.props.postNewMessage(this.state.message);
-    this.setState({ message: ""});
-
-};
 
 
  toogleEmojiState = () => {
@@ -83,8 +73,8 @@ class MessageForm extends Component {
   handleEmojiClick = (n, e) => {
     let emoji = jsemoji.replace_colons(`:${e.name}:`);
     this.setState({
-      message: this.state.message + emoji
-     
+      message: this.state.message + emoji,
+      emojiShown: !this.state.emojiShown
     });
   }
 

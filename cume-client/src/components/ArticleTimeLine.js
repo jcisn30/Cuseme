@@ -1,6 +1,7 @@
 import React from "react";
 import ArticleList from "../containers/ArticleList";
 
+// ---- Main Article section TimeLine ---- //
 const ArticleTimeLine = props => {
 	return (
 		<div className="ui four column doubling stackable grid container">

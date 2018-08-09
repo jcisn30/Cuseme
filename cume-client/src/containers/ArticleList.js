@@ -4,10 +4,7 @@ import {fetchArticles} from "../store/actions/articles";
 import ArticleItem from "../components/ArticleItem";
 
 
-
-
-
-
+// ---- Article Item List Comnponent ---- //
 class ArticleList extends Component {
 	componentDidMount(){
 		this.props.fetchArticles();

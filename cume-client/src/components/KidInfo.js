@@ -5,9 +5,7 @@ import './KidInfo.css';
 // import {removeMessage } from "../store/actions/messages";
 
 
-
-
-
+// ---- Kid detailed page ---- //
 const KidInfo = ({infok, errors}) => 
 	
 
@@ -23,21 +21,11 @@ const KidInfo = ({infok, errors}) =>
  
   <MessageForm errors={errors} />
   
-  
-    
 </div>
 </div>
-
-
-                   
-                        
- 
-
 </div>
 
   
-
- 
 
 
 const mapStateToProps = ({infok}) => ({

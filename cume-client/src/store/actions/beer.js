@@ -159,7 +159,7 @@ export const like = (likes) => (dispatch, getState) => {
       // dispatch(updatedLikes(info.likes))
       dispatch(getBeerInfo(id1));
       
-        console.log(likes)
+        // console.log(likes)
     }) 
         
 		
@@ -188,7 +188,7 @@ export const removeMessage = (message_id, message_user, req) => (dispatch, getSt
         addError(err.message);
       });
   } else { 
-     document.getElementById('errorname').innerHTML="You must login and be the comment owner to delete!!!"; 
+     alert("You must login and be the comment owner to delete!!!"); 
   }
   
 };

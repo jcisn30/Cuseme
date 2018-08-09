@@ -1,4 +1,3 @@
-
 import React from 'react';
 import {connect} from "react-redux";
 import {Link } from 'react-router-dom';
@@ -8,32 +7,18 @@ import {getCurrentArticle, getArticleInfo} from "../store/actions/article";
 import './ArticleItem.css';
 
 
+// ---- Individual Main page Article section layout ---- //
 const ArticleItem = ({title, URL, image, active, ida, setArticle, created_date, message,likes}) => (
 	
 	<div className="column">
-	
-	 <Link to={{pathname: `/article${ida}`}} onClick={setArticle(ida)}>
+	<Link to={{pathname: `/article${ida}`}} onClick={setArticle(ida)}>
 		<div className="ui raised segment"  >
-		
-			<h5>{title}</h5>
+		    <h5>{title}</h5>
 			<img className="columnImg" src={URL} alt="mainItemPic" />
-				
-				
-	
-	
-	
-	
-	
-		
-		
-		</div>
-		
-      </Link>
+	    </div>
+		</Link>
       	
-	
-	
-		
-     
+
 	
 	<div className="ui segment">
 	<div className="content">
@@ -53,14 +38,9 @@ const ArticleItem = ({title, URL, image, active, ida, setArticle, created_date, 
 const mapDispatchToProps = (dispatch) => ({
   setArticle(ida) {
     return () => {
-     
-     
-
       dispatch(getCurrentArticle(ida));
       dispatch(getArticleInfo(ida));
-      
-      
-    };
+      };
     
   },
   

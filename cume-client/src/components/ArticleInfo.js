@@ -4,10 +4,7 @@ import MessageForm from "../containers/ArticleMessageForm";
 import './ArticleInfo.css';
 // import {removeMessage } from "../store/actions/messages";
 
-
-
-
-
+// ---- Article detailed page ---- //
 const ArticleInfo = ({infoa, errors}) => 
 	
 
@@ -23,23 +20,11 @@ const ArticleInfo = ({infoa, errors}) =>
  
   <MessageForm errors={errors} />
   
-  
-    
 </div>
 </div>
-
-
-                   
-                        
- 
-
 </div>
 
   
-
- 
-
-
 const mapStateToProps = ({infoa}) => ({
   infoa,
  
@@ -47,7 +32,4 @@ const mapStateToProps = ({infoa}) => ({
 
 
  
-            
-            
-
 export default connect(mapStateToProps)(ArticleInfo);

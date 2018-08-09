@@ -1,6 +1,7 @@
 import React from "react";
 import BeerList from "../containers/BeerList";
 
+// ---- Main Beer section TimeLine ---- //
 const BeerTimeLine = props => {
 	return (
 		<div className="ui four column doubling stackable grid container">

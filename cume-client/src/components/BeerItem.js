@@ -8,32 +8,17 @@ import {getCurrentBeer, getBeerInfo} from "../store/actions/beer";
 import './BeerItem.css';
 
 
+// ---- Individual Main page Beer section layout ---- //
 const BeerItem = ({title, URL, image, active, id, setBeer, created_date, message,likes}) => (
 	
 	<div className="column">
-	
-	 <Link to={{pathname: `/beer${id}`}} onClick={setBeer(id)}>
-		<div className="ui raised segment"  >
-		
+		<Link to={{pathname: `/beer${id}`}} onClick={setBeer(id)}>
+			<div className="ui raised segment"  >
 			<h5>{title}</h5>
 			<img className="columnImg ui image rounded" src={URL} alt="mainItemPic" />
-			
-				
-	
-	
-	
-	
-	
-		
-		
-		</div>
-		
-      </Link>
+			</div>
+		</Link>
       	
-	
-	
-		
-     
 	
 	<div className="ui segment">
 	<div className="content">
@@ -54,14 +39,9 @@ const BeerItem = ({title, URL, image, active, id, setBeer, created_date, message
 const mapDispatchToProps = (dispatch) => ({
   setBeer(id) {
     return () => {
-     
-     
-
-      dispatch(getCurrentBeer(id));
-      dispatch(getBeerInfo(id));
-      
-      
-    };
+    	dispatch(getCurrentBeer(id));
+    	dispatch(getBeerInfo(id));
+      };
     
   },
   
