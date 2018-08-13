@@ -13,7 +13,7 @@ const beerRoutes = require("./routes/beer");
 const kidRoutes = require("./routes/kid");
 const articleRoutes = require("./routes/article");
 const db = require("./models");
-const PORT = 8081;
+const PORT = process.env.PORT || 8081;
 
 app.use(cors());
 app.use(bodyParser.json());
