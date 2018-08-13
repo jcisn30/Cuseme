@@ -18,6 +18,7 @@ export function logout() {
     localStorage.clear();
     setAuthorizationToken(false);
     dispatch(setCurrentUser({}));
+    
   };
 }
 

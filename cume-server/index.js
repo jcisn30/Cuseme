@@ -81,6 +81,8 @@ app.use(function(req, res, next) {
 
 app.use(errorHandler);
 
+console.log(process.env.DATABASEURL)
+
 app.listen(PORT, function() {
   console.log(`Server is starting on port ${PORT}`);
 });

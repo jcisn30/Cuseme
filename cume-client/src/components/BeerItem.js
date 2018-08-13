@@ -9,7 +9,7 @@ import './BeerItem.css';
 
 
 // ---- Individual Main page Beer section layout ---- //
-const BeerItem = ({title, URL, image, active, id, setBeer, created_date, message,likes}) => (
+const BeerItem = ({title, URL, image, active, id, description, setBeer, created_date, message,likes}) => (
 	
 	<div className="column">
 		<Link to={{pathname: `/beer${id}`}} onClick={setBeer(id)}>
@@ -22,7 +22,7 @@ const BeerItem = ({title, URL, image, active, id, setBeer, created_date, message
 	
 	<div className="ui segment">
 	<div className="content">
-	<p>This is where the description would go, funny description that is</p>
+	<p>{description}</p>
 		 <Link to={{pathname: `/beer${id}`}} onClick={setBeer(id)}>
   	<i className="comment outline icon"> Comment</i></Link>
 			<span className="right floated">
