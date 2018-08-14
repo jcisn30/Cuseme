@@ -4,10 +4,17 @@
 const mongoose = require('mongoose');
 mongoose.set('debug', true);
 // mongoose.Promise = Promise;
-mongoose.connect(process.env.DATABASEURL, {
+// mongoose.connect(process.env.DATABASEURL, {
+//     keepAlive: true
+ 
+// });
+
+mongoose.connect('mongodb://localhost/cuseme', {
     keepAlive: true
  
 });
+
+
 
 // mongoose.connect('mongodb://cumeadmin:cumeadm1n@ds119422.mlab.com:19422/cume', {
 //     keepAlive: true

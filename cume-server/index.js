@@ -15,6 +15,8 @@ const articleRoutes = require("./routes/article");
 const db = require("./models");
 const PORT =  8081;
 
+// process.env.PORT ||
+
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
