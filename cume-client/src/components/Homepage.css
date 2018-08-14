@@ -1,6 +1,11 @@
+.ui.block.header {
+    margin-top: 10%;
+}
+
 @media screen and  (max-width: 480px) {
 
-    .ui block header {
+    .ui.block.header {
         display: none;
+        
     }
 }

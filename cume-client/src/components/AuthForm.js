@@ -48,7 +48,7 @@ class AuthForm extends Component {
 		return( 
 			<div className="ui center aligned container">
 				<form className="ui form" onSubmit={this.handleSubmit}>
-				<h2>{heading}</h2>
+				<h2 id="authheader">{heading}</h2>
 				{errors.message && (
 				<div className="ui error message">
 					<div className="header">
