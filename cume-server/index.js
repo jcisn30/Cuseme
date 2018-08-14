@@ -13,7 +13,7 @@ const beerRoutes = require("./routes/beer");
 const kidRoutes = require("./routes/kid");
 const articleRoutes = require("./routes/article");
 const db = require("./models");
-const PORT =  8081;
+const PORT = 8081;
 
 // process.env.PORT ||
 
