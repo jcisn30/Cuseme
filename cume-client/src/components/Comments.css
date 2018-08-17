@@ -92,10 +92,13 @@ width: 75%;
 @media only screen and (max-width: 480px)  {
     .ui.action.input:not([class*="left action"])>input {
         margin-bottom: 10%;
+        margin-top: 0;
     }
     
     .ui.action.input:not([class*="left action"])>.button:not(:first-child), .ui.action.input:not([class*="left action"])>.buttons:not(:first-child)>.button, .ui.action.input:not([class*="left action"])>.dropdown:not(:first-child){
         
     margin-bottom: 10%;
     }
+    
+    
 }

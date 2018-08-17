@@ -8,7 +8,7 @@ import './Likes.css';
 const likes =  ({ likes, info}) =>
  
  <span className="right floated">
-     <Likes   /> {info.likes}
+    <span className="likesSpan"> <Likes   />   {info.likes}</span>
     </span> 
     
   const mapStateToProps = ( {likes, info } ) => ({

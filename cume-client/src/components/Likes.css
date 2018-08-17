@@ -7,3 +7,12 @@
     
 }
 
+@media only screen and (max-width: 480px)  {
+     .likesSpan{
+         float: right;
+         margin-right: 15%;
+     }
+     
+     
+    
+}

@@ -5,3 +5,10 @@ input {
 aside {
     margin: auto;
 }
+
+@media only screen and (max-width: 480px)  {
+
+    .input.form-control {
+        margin-top: 0;
+    }
+}

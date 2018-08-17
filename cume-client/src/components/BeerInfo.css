@@ -8,11 +8,7 @@
     border-radius:  0;
 }
 
-.ui.card [class*="right floated"], .ui.cards>.card [class*="right floated"] {
-    margin-left: 5%;
-    padding-right: 25%;
-    display: inline;
-}
+
 
 .infoTitle {
     margin-top: 5%;
@@ -22,6 +18,11 @@
     padding-bottom:  5%;
 }
 
-i.icon {
+.icon {
     margin-right: 2%;
+}
+
+
+@media only screen and (max-width: 480px)  {
+    
 }
