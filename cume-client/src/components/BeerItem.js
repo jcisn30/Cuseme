@@ -31,7 +31,9 @@ const BeerItem = ({title, URL, image, active, id, description, setBeer, created_
      </span>
      </div>
 </div>
+
 </div>
+
 )
 
 

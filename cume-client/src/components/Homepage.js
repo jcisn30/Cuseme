@@ -7,12 +7,13 @@ import './Homepage.css';
 // ---- HomePage ---- //
 const Homepage = (beer) => (
     <div>
-    <h3 className="ui block header">
+    <h3 className="ui block header" id="beer">
       A Day Without Laughter Is A Day Wasted
     </h3>
      <div className="column">
      <BeerTimeLine/>
      </div>
+     
       <div className="column">
      <KidTimeLine/>
      </div>

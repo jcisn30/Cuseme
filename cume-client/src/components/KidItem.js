@@ -7,19 +7,20 @@ import {getCurrentKid, getKidInfo} from "../store/actions/kid";
 import './KidItem.css';
 
 // ---- Individual Main page Kid section layout ---- //
-const KidItem = ({title, URL, image, active, idk, setKid, created_date, message,likes}) => (
+const KidItem = ({title, URL, image, active, idk, setKid, created_date, message,likes, description}) => (
 	
 	<div className="column">
 	    <Link to={{pathname: `/kid${idk}`}} onClick={setKid(idk)}>
 		<div className="ui raised segment"  >
 		    <h5>{title}</h5>
-			<img className="columnImg" src={URL} alt="mainItemPic" />
+			<img className="columnImg ui image rounded" src={URL} alt="mainItemPic" />
 		</div>
 		</Link>
       	
 	
 	<div className="ui segment">
 	<div className="content">
+	<p className="descriptionPara">{description}</p>
 		 <Link to={{pathname: `/kid${idk}`}} onClick={setKid(idk)}>
   	<i className="comment outline icon"> Comment</i></Link>
 			<span className="right floated">

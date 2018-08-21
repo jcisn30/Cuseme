@@ -60,9 +60,9 @@ class Navbar extends Component {
                  <a href='/' className="item active logo">
                 <img src={Logo} alt="logo"/>
                 </a>
-                    <a className="item" >Hold My Beer</a>
-                    <a className="item">Kids</a>
-                    <a className="item">Funny Reads</a>
+                    <a href="#beer" className="item" >Hold My Beer</a>
+                    <a href="#kids" className="item">Kids</a>
+                    <a href="#articles" className="item">Funny Reads</a>
                     
                    
                     

@@ -25,3 +25,10 @@
 i.icon {
     margin-right: 2%;
 }
+
+
+@media only screen and (max-width: 480px)  {
+   .ui.column.grid>[class*="sixteen wide"].column, .ui.grid>.column.row>[class*="sixteen wide"].column, .ui.grid>.row>[class*="sixteen wide"].column, .ui.grid>[class*="sixteen wide"].column {
+        margin-top: 25%;
+    }
+}
