@@ -5,10 +5,10 @@ import './Likes.css';
 
 
 // ---- Article likes counter ---- //
-const likes =  ({ likes, info}) =>
+const likes =  ({ likes, infoa}) =>
  
  <span className="right floated">
-     <Likes   /> {info.likes}
+      <span className="likesSpan"> <Likes   />   {infoa.likes}</span>
     </span> 
     
   const mapStateToProps = ( {likes, info } ) => ({

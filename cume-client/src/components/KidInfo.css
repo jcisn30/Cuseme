@@ -1,5 +1,6 @@
 .ui.card {
     width: 40%;
+    margin-top: 10%;
 }
 
 .ui.segment:last-child {
@@ -8,10 +9,8 @@
     border-radius:  0;
 }
 
-.ui.card [class*="right floated"], .ui.cards>.card [class*="right floated"] {
-    margin-left: 5%;
-    padding-right: 25%;
-    display: inline;
+.ui.centered.grid, .ui.centered.grid>.row, .ui.grid>.centered.row {
+    margin-top: 10%;
 }
 
 .infoTitle {
@@ -22,10 +21,14 @@
     padding-bottom:  5%;
 }
 
-i.icon {
+.icon {
     margin-right: 2%;
 }
 
+.ui.card [class*="right floated"], .ui.cards>.card [class*="right floated"] {
+    margin-left: 15%;
+    padding-right: 20%;
+}
 
 @media only screen and (max-width: 480px)  {
    .ui.column.grid>[class*="sixteen wide"].column, .ui.grid>.column.row>[class*="sixteen wide"].column, .ui.grid>.row>[class*="sixteen wide"].column, .ui.grid>[class*="sixteen wide"].column {

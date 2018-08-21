@@ -8,7 +8,7 @@ import './ArticleItem.css';
 
 
 // ---- Individual Main page Article section layout ---- //
-const ArticleItem = ({title, URL, image, active, ida, setArticle, created_date, message,likes}) => (
+const ArticleItem = ({title, URL, image, description, active, ida, setArticle, created_date, message,likes}) => (
 	
 	<div className="column">
 	<Link to={{pathname: `/article${ida}`}} onClick={setArticle(ida)}>
@@ -22,6 +22,7 @@ const ArticleItem = ({title, URL, image, active, ida, setArticle, created_date, 
 	
 	<div className="ui segment">
 	<div className="content">
+		<p className="descriptionPara">{description}</p>
 		 <Link to={{pathname: `/article${ida}`}} onClick={setArticle(ida)}>
   	<i className="comment outline icon"> Comment</i></Link>
 			<span className="right floated">

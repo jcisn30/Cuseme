@@ -14,10 +14,14 @@ const Homepage = (beer) => (
      <BeerTimeLine/>
      </div>
      
-      <div className="column">
+     
+      <div className="column" id="kids">
      <KidTimeLine/>
      </div>
+     
+     <div className="column" id="article">
      <ArticleTimeLine/>
+     </div>
     </div>
     
     );
