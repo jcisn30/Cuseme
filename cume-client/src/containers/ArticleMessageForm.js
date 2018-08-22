@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { postNewMessage } from "../store/actions/article";
-import Comments from "../components/ArticlesComments";
+import Comments from "../components/ArticleComments";
 import PropTypes from "prop-types";
 import EmojiPicker from 'emoji-picker-react';
 import JSEMOJI from 'emoji-js';

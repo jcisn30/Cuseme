@@ -1,21 +1,21 @@
 import React, {Component} from "react";
+import {connect} from "react-redux";
 import './Footer.css';
 import Media from "react-media";
+import {activeItem} from "../store/actions/navbar";
 // import Logo from "../images/laughing-horse-clipart-1.jpg";
-import $ from 'jquery'
+// import $ from 'jquery'
 
 
 class Footer extends Component {
     
     
-     menuClick = () => {
-     
-      $('.ui .item').on('click', function() {
-   $('.ui .item').removeClass('active');
-   $(this).addClass('active');
-})
-}
+//     activeItem = e =>{
+    
+//     this.props.activeItem();
 
+       
+//   }
 
 
 
@@ -26,11 +26,11 @@ class Footer extends Component {
         return(
             <Media query="(max-width: 480px)">
               {matches =>
-            matches ? (  <div className="ui secondary pointing menu" id="footer" onClick={this.menuClick} >
+            matches ? (  <div className="ui secondary pointing menu" id="footer"  >
             
-                    <a className="item" >Hold My Beer</a>
-                    <a className="item">Kids</a>
-                    <a className="item">Funny Reads</a></div>): (
+                    <a href="/#beerMobile" className="item">Hold My Beer</a>
+                    <a href="/#kids" className="item">Kids</a>
+                    <a href="/#articles" className="item">Funny Reads</a></div>): (
             <div className="ui center aligned container footer">
   <p> &copy; {new Date().getFullYear()} Copyright CuseMe</p>
 </div> 
@@ -42,4 +42,4 @@ class Footer extends Component {
     
 }
 
-export default Footer;
+export default connect(null,{activeItem}) (Footer);

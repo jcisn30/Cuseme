@@ -6,6 +6,7 @@ import AuthForm from "../components/AuthForm";
 import UserAside from "../components/UserAside";
 import BeerInfo from "../components/BeerInfo";
 import KidInfo from "../components/KidInfo";
+import ArticleInfo from "../components/ArticleInfo";
 import { authUser } from "../store/actions/auth";
 import { removeError } from "../store/actions/errors";
 
@@ -50,6 +51,15 @@ const Main = props => {
                 return (
                     
                      <KidInfo removeError={removeError} errors={errors} {...props} />
+                );
+            }}
+            />
+            
+            
+            <Route exact path="/article:id" render={props => {
+                return (
+                    
+                     <ArticleInfo removeError={removeError} errors={errors} {...props} />
                 );
             }}
             />

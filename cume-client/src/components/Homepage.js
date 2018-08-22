@@ -10,7 +10,7 @@ const Homepage = (beer) => (
     <h3 className="ui block header" id="beer">
       A Day Without Laughter Is A Day Wasted
     </h3>
-     <div className="column">
+     <div className="column" id="beerMobile">
      <BeerTimeLine/>
      </div>
      

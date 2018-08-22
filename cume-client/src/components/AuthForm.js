@@ -14,6 +14,10 @@ class AuthForm extends Component {
 			profileImageUrl: ""
 		};
 	}
+	
+	componentDidMount () {
+  window.scrollTo(0, 0)
+}
 		
 		
 		handleSubmit = e => {

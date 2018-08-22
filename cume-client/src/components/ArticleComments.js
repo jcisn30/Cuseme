@@ -3,7 +3,7 @@ import Moment from "react-moment";
 import { Link } from "react-router-dom";
 import { connect } from 'react-redux';
 import { removeMessage } from "../store/actions/article";
-import Likes from "./ArticleLikes";
+import Likes from "./ArticlesLikes";
 import DefaultProfileImg from "../images/laughing-horse-clipart-1.jpg";
 import './Comments.css';
 
