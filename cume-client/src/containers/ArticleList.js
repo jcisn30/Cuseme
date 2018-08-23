@@ -19,7 +19,7 @@ class ArticleList extends Component {
     
     <ArticleItem
       key={a._id}
-      idk={a._id}
+      ida={a._id}
       date={a.createdAt}
       username={a.username}
       text={a.text}

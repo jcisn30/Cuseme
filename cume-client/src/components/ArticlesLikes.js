@@ -11,9 +11,9 @@ const likes =  ({ likes, infoa}) =>
       <span className="likesSpan"> <Likes   />   {infoa.likes}</span>
     </span> 
     
-  const mapStateToProps = ( {likes, info } ) => ({
+  const mapStateToProps = ( {likes, infoa } ) => ({
   likes,
-  info
+  infoa
   
 });
 

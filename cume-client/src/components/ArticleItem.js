@@ -11,12 +11,12 @@ import './ArticleItem.css';
 const ArticleItem = ({title, URL, image, description, active, ida, setArticle, created_date, message,likes}) => (
 	
 	<div className="column">
-	<Link to={{pathname: `/article${ida}`}} onClick={setArticle(ida)}>
+	
 		<div className="ui raised segment"  >
 		    <h5>{title}</h5>
-			<img className="columnImg" src={URL} alt="mainItemPic" />
+			<a href={URL} target="_blank"><img className="columnImg" src={image} alt="mainItemPic"/></a>
 	    </div>
-		</Link>
+		
       	
 
 	

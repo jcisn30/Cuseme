@@ -7,7 +7,7 @@ const KidTimeLine = props => {
 		
 		
 		<div className="ui four column doubling stackable grid container">
-		<div className="ui red ribbon label"  >Kids</div>
+		<div className="ui red ribbon label"  >Kids Falling</div>
 			<div className="row">
 			<KidList />
 			</div>

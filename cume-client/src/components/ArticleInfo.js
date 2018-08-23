@@ -19,8 +19,9 @@ const ArticleInfo = ({infoa, errors}) =>
   </div>
   <div className="ui image">
     <img src={infoa.image} alt="ArticlePic"/>
+
   </div>
- 
+     <p id="articleinfop">{infoa.description}</p>
   <MessageForm errors={errors} />
   
     </div>
@@ -38,7 +39,7 @@ const ArticleInfo = ({infoa, errors}) =>
   <div className="image">
     <img src={infoa.image} alt="ArticlePic"/>
   </div>
- 
+ <p id="articleinfop">{infoa.description}</p>
   <MessageForm errors={errors} />
   
 </div>
