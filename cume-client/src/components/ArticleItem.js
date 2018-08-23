@@ -20,7 +20,7 @@ const ArticleItem = ({title, URL, image, description, active, ida, setArticle, c
       	
 
 	
-	<div className="ui segment">
+	<div className="ui segment" id="articleseg">
 	<div className="content">
 		<p className="descriptionPara">{description}</p>
 		 <Link to={{pathname: `/article${ida}`}} onClick={setArticle(ida)}>

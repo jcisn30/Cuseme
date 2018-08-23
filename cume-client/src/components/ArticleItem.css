@@ -1,5 +1,6 @@
 .column {
   padding-left: 2%;
+  
 }
 
 .columnImg {
@@ -28,10 +29,15 @@ i.icon.outline {
   margin-bottom: 5%;
 }
 
+
 @media screen and  (max-width: 480px) {
 
   .ui.red.ribbon.label {
   margin-top: 35%;
+}
+
+#articleseg {
+  margin-bottom: 25%;
 }
 
 }
