@@ -14,10 +14,17 @@ mongoose.set('debug', true);
  
 // });
 
-mongoose.connect('mongodb://cumeadmin:cumeadm1n@ds119422.mlab.com:19422/cume', {
+//mongoose.connect('mongodb://cumeadmin:cumeadm1n@ds119422.mlab.com:19422/cume', {
+    //keepAlive: true
+ 
+//});
+
+
+mongoose.connect('mongodb+srv://cumeadmin:Kbry@nt10@cume.h4tnu.mongodb.net/cume?retryWrites=true&w=majority', {
     keepAlive: true
  
 });
+
 
 
 
